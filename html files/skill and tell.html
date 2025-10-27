@@ -1,0 +1,346 @@
+<!Doctype html >
+<html lang="en">
+    <head>
+          <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>club page</title>
+<link rel="icon" href="" type="image/png">
+<style>/* the cover means it takes all circle */
+.circle-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #133563;
+  display: block;
+  float: left;
+  margin:  50px 50px ;
+}
+body{
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/006/852/804/small_2x/abstract-blue-background-simple-design-for-your-website-free-vector.jpg');
+  background-size: cover;        /* make it fill the screen */
+  background-repeat: no-repeat;  /* no repeating */
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+   height: 100vh;                  /* ensures it takes full height of viewport */
+     font-family: Arial, sans-serif;          /* optional: clean font */
+  margin: 0;                               /* remove default browser margin */
+  padding: 0;  
+  color:white ; /* center it nicely */
+}
+.title {
+  font-size: 28px; /* makes title big */
+  font-weight: bold;
+}
+
+.intro, .conclusion {
+  font-size: 20px; /* makes paragraphs bigger */
+  line-height: 1.6; /* improves spacing between lines */
+}
+
+.visit-list {
+  font-size: 20px; /* makes list text bigger */
+  list-style-type: disc; /* keeps bullet points */
+  margin-left: 40px;
+}
+#departments {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f0f4ff;
+}
+
+#departments h2 {
+  color: #355277;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.departments-container {
+  display: grid;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 40px;
+}
+
+.department-card {
+  background-color: #416fa1;
+  color: white;
+  width: 250px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 9px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.department-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.department-card h4 {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.department-card p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+#comments {
+  background-color: #c9cace;
+  color: #222;
+  padding: 30px;
+  margin: 50px;
+  border-radius: 10px;
+  width: 60%;
+}
+#comments input, #comments textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #31334b;
+}
+#comments button {
+  background-color: #2b3746;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#comments button:hover {
+  background-color: #212b3a;
+}
+/* ===== General Styling ===== */
+body {
+  background-color: #0d0821;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Section Title ===== */
+.section-title {
+  text-align: center;
+  font-size: 2em;
+  color: #fcd34d;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+/* ===== Event Cards Layout ===== */
+.events-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 40px 60px;
+}
+
+/* ===== Card Design ===== */
+.event-card {
+  background: linear-gradient(180deg, #2b194a 0%, #1a1032 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 350px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* ===== Image ===== */
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ===== Content ===== */
+.event-content {
+  padding: 20px;
+}
+
+/* Header (number + date) */
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  color: #fcd34d;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.event-title {
+  font-size: 1.6em;
+  margin: 0;
+  color: white;
+}
+
+/* Description */
+.event-description {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #ddd;
+  margin-top: 10px;
+}
+
+/* ===== Tags ===== */
+.event-tags {
+  margin-top: 15px;
+}
+
+.tag {
+  background-color: #6c2bd9;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 25px;
+  font-size: 0.8em;
+  margin-right: 6px;
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+.tag:hover {
+  background-color: #9f57ff;
+}
+
+</style>
+
+    </head>
+<body>
+    <section class="etc-about">
+<img src="../images/skill and tell.jpg"
+ width="500" height="300"
+ class="circle-img">
+
+  <section class="skill-section" id="skillntell">
+  <h2 class="etc-title">About Skill & Tell</h2>
+
+  <br>
+  <ul class="skill-list">
+    <li><strong>Skill & Tell Club</strong> is a scientific and cultural club at the <strong>National Higher School of Artificial Intelligence (ENSIA)</strong>.</li>
+    <br>
+    <li>It focuses on developing both <em>technical and soft skills</em>, helping students grow personally and professionally through <strong>interactive activities</strong>.</li>
+    <br>
+    <li>The club aims to <strong>bridge communication, teamwork, and creativity</strong> with technology, ensuring members learn how to express and present their knowledge effectively.</li>
+    <br>
+    <li>Through <strong>training sessions, workshops, and events</strong>, Skill & Tell empowers students to gain confidence and leadership skills while exploring areas like <strong>design, marketing, and media production</strong>.</li>
+    <br>
+    <li>Its mission is to <strong>help ENSIA students develop essential skills</strong> needed in the modern workplace — from communication and teamwork to creativity and innovation.</li>
+    <br>
+    <li><strong>Skill & Tell — Where Skills Meet Expression.</strong></li>
+  </ul>
+
+  <section id="departments">
+    <h2>Our Departments</h2>
+    <div class="departments-container">
+
+      <div class="department-card">
+        <h4>Leadership & Strategy</h4>
+        <p>Defining the club’s vision and ensuring effective coordination across all teams.</p>
+      </div>
+
+      <div class="department-card">
+        <h4>External Relations</h4>
+        <p>Building partnerships with organizations, sponsors, and specialists to support club initiatives.</p>
+      </div>
+
+      <div class="department-card">
+        <h4>Marketing</h4>
+        <p>Creating and managing marketing campaigns to promote events and enhance visibility.</p>
+      </div>
+
+      <div class="department-card">
+        <h4>Media & Multimedia Production</h4>
+        <p>Handling photography, videography, and media design for the club’s events and online presence.</p>
+      </div>
+
+      <div class="department-card">
+        <h4>Design & UI/UX</h4>
+        <p>Developing the club’s visual identity and crafting appealing digital designs.</p>
+      </div>
+
+      <div class="department-card">
+        <h4>HR & Member Relations</h4>
+        <p>Recruiting new members, managing team spirit, and ensuring a healthy work environment.</p>
+      </div>
+
+      <div class="department-card">
+        <h4>Events & Workshops</h4>
+        <p>Organizing conferences, skill-building workshops, and personal development sessions.</p>
+      </div>
+
+      <div class="department-card">
+        <h4>Finance & Administration</h4>
+        <p>Managing budgets, documentation, and internal resources of the club.</p>
+      </div>
+
+    </div>
+  </section>
+</section>
+
+  <section class="events-section">
+    <h2 class="section-title">Upcoming Events</h2>
+
+    <div class="events-container">
+
+      <!-- Event Card 1 -->
+      <div class="event-card">
+        <img src="../images/mobai.jpg" alt="MobAI Camp" class="event-image">
+
+        <div class="event-content">
+          <div class="event-header">
+            <span class="event-number">01</span>
+            <span class="event-date">2025-05-20</span>
+          </div>
+
+          <h4 class="event-title">MobAI</h4>
+          <p class="event-description">
+            MobAI is a 3-day hackathon that brings together mobile development, AI, and UI/UX in one exciting event.
+            Participants engage in hands-on workshops to learn the skills they need to tackle real-world challenges.
+          </p>
+
+          <div class="event-tags">
+            <span class="tag">Mobile Dev</span>
+            <span class="tag">AI</span>
+            <span class="tag">UI/UX</span>
+            <span class="tag">Hackathon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Duplicate this block for more posts -->
+      <div class="event-card">
+        <img src="../images/ai workshop.jpg" alt="AI Workshop" class="event-image">
+        <div class="event-content">
+          <div class="event-header">
+            <span class="event-number">02</span>
+            <span class="event-date">2025-06-10</span>
+          </div>
+          <h4 class="event-title">AI Workshop</h4>
+          <p class="event-description">
+            A full-day hands-on session exploring neural networks, deep learning, and the basics of AI implementation.
+          </p>
+          <div class="event-tags">
+            <span class="tag">AI</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">Workshop</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

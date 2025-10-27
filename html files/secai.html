@@ -1,0 +1,333 @@
+<!Doctype html >
+<html lang="en">
+    <head>
+          <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>club page</title>
+<link rel="icon" href="" type="image/png">
+<style>/* the cover means it takes all circle */
+.circle-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #133563;
+  display: block;
+  float: left;
+  margin:  50px 50px ;
+}
+body{
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/006/852/804/small_2x/abstract-blue-background-simple-design-for-your-website-free-vector.jpg');
+  background-size: cover;        /* make it fill the screen */
+  background-repeat: no-repeat;  /* no repeating */
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+   height: 100vh;                  /* ensures it takes full height of viewport */
+     font-family: Arial, sans-serif;          /* optional: clean font */
+  margin: 0;                               /* remove default browser margin */
+  padding: 0;  
+  color:white ; /* center it nicely */
+}
+.title {
+  font-size: 28px; /* makes title big */
+  font-weight: bold;
+}
+
+.intro, .conclusion {
+  font-size: 20px; /* makes paragraphs bigger */
+  line-height: 1.6; /* improves spacing between lines */
+}
+
+.visit-list {
+  font-size: 20px; /* makes list text bigger */
+  list-style-type: disc; /* keeps bullet points */
+  margin-left: 40px;
+}
+#departments {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f0f4ff;
+}
+
+#departments h2 {
+  color: #355277;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.departments-container {
+  display: grid;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 40px;
+}
+
+.department-card {
+  background-color: #416fa1;
+  color: white;
+  width: 500px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 9px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.department-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.department-card h4 {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.department-card p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+#comments {
+  background-color: #c9cace;
+  color: #222;
+  padding: 30px;
+  margin: 50px auto;
+  border-radius: 10px;
+  width: 60%;
+}
+#comments input,
+ #comments textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #31334b;
+}
+#comments button {
+  background-color: #2b3746;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#comments button:hover {
+  background-color: #212b3a;
+}
+/* ===== General Styling ===== */
+body {
+  background-color: #300eb4;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Section Title ===== */
+.section-title {
+  text-align: center;
+  font-size: 2em;
+  color: #fcd34d;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+/* ===== Event Cards Layout ===== */
+.events-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 40px 60px;
+}
+
+/* ===== Card Design ===== */
+.event-card {
+  background: linear-gradient(180deg, #2b194a 0%, #1a1032 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 350px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* ===== Image ===== */
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ===== Content ===== */
+.event-content {
+  padding: 20px;
+}
+
+/* Header (number + date) */
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  color: #fcd34d;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.event-title {
+  font-size: 1.6em;
+  margin: 0;
+  color: white;
+}
+
+/* Description */
+.event-description {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #ddd;
+  margin-top: 10px;
+}
+
+/* ===== Tags ===== */
+.event-tags {
+  margin-top: 15px;
+}
+
+.tag {
+  background-color: #6c2bd9;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 25px;
+  font-size: 0.8em;
+  margin-right: 6px;
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+.tag:hover {
+  background-color: #9f57ff;
+}
+
+</style>
+
+    </head>
+<body>
+    <section class="secai-about">
+<img src="../images/secai.jpg"
+ width="500" height="300"
+ class="circle-img">
+
+  <h1 class="etc-title">About SecAI </h1>
+
+  <br>
+  <ul class="secai-list">
+  <li><strong>SecAI (Science & Artificial Intelligence Club)</strong> is one of the scientific clubs at the <strong>National Higher School of Artificial Intelligence (ENSIA)</strong>.</li>
+  <br>
+  <li>It focuses on <em>artificial intelligence, research, and innovation</em>, providing students with opportunities to apply theory through <strong>hands-on projects</strong>.</li>
+  <br>
+  <li>Through <strong>hackathons, workshops, and scientific events</strong> such as Hack&Train, SecAI fosters a culture of creativity, problem-solving, and collaboration.</li>
+  <br>
+  <li>Its mission is to <strong>advance scientific thinking</strong>, <strong>encourage research</strong>, and <strong>connect students with industry and institutions</strong>.</li>
+  <br>
+  <li>Whether you are passionate about <strong>AI, data science, or innovation</strong>, SecAI is the community where <strong>curiosity meets creation</strong>.</li>
+  <br>
+  <li><strong>SecAI — Shaping the Future through Science and AI.</strong></li>
+</ul>
+
+</section>
+<section id="departments">
+  <h2> Our Departments</h2>
+  <div class="departments-container">
+
+    <div class="department-card">
+      <h4>Leadership & Strategy</h4>
+      <p>setting vision, managing club governance..</p>
+    </div>
+
+    <div class="department-card">
+      <h4>Events & Hackathons</h4>
+      <p>organizing major competitive or collaborative events (e.g. Hack&Train).</p>
+    </div>
+
+    <div class="department-card">
+      <h4>Workshops & Learning</h4>
+      <p>arranging training sessions or seminars on AI, data science etc.</p>
+    </div>
+
+    <div class="department-card">
+      <h4>Research & Projects</h4>
+      <p>supporting student research or development projects.</p>
+    </div>
+
+    <div class="department-card">
+      <h4>Communications & Publicity</h4>
+      <p>managing promotion, outreach, social media.</p>
+    </div>
+
+    <div class="department-card">
+      <h4>Partnerships & External Relations</h4>
+      <p>working with industry, institutions, research partners.</p>
+    </div>
+
+    <div class="department-card">
+      <h4>Logistics & Operations</h4>
+      <p>scheduling, venues, supplies, membership management.</p>
+    </div>
+
+  </div>
+</section>
+
+    <th></th>
+</tr>
+<section id="comments">
+  <h2>Leave a comment</h2>
+  <form>
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Comment:</label><br>
+    <textarea name="comment" rows="5" required></textarea><br><br>
+
+    <button type="submit">Post Comment</button>
+  </form>
+</section>
+
+  <section class="events-section">
+    <h2 class="section-title">Upcoming Events</h2>
+
+    <div class="events-container">
+
+     
+        
+      <!-- Duplicate this block for more posts -->
+      <div class="event-card">
+        <img src="https://builtin.com/sites/www.builtin.com/files/2024-10/cybersecurity.png" alt="AI Workshop" class="event-image">
+        <div class="event-content">
+          <div class="event-header">
+            <span class="event-number">01</span>
+            <span class="event-date">2025-09-10</span>
+          </div>
+          <h4 class="event-title">Cyber security </h4>
+          <p class="event-description">
+           earn how to protect systems and data through hands-on ethical hacking, threat analysis, and defense techniques.
+          </p>
+          <div class="event-tags">
+            <span class="tag">cybersecurity</span>
+            <span class="tag">protection</span>
+            <span class="tag">Workshop</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
