@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem("adminRole", user.role);
 
        if(user.role === "super"){
-        window.location.href = "super_Admin.html";
+        window.location.href = "super_admin.html";
        }
        else{
          window.location.href = "admin.html";
