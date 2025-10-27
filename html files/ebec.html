@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Page</title>
+    <link rel="icon" href="" type="image/png">
+
+    <style>
+      /* ===== Image ===== */
+      .circle-img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #133563;
+        display: block;
+        float: left;
+        margin: 50px 50px;
+      }
+
+      /* ===== Body ===== */
+      body {
+        background-image: url('https://www.shutterstock.com/image-vector/ai-humanoid-face-concept-technology-600nw-2645975149.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: white;
+      }
+
+      /* ===== About Section ===== */
+      .ebec-title {
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .ebec-list {
+        font-size: 20px;
+        line-height: 1.6;
+      }
+
+      /* ===== Departments ===== */
+      #departments {
+        text-align: center;
+        padding: 50px 0;
+        background-color: #f0f4ff;
+      }
+
+      #departments h2 {
+        color: #355277;
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+
+      .departments-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        justify-items: center;
+        padding: 0 40px;
+      }
+
+      .department-card {
+        background-color: #3685ebd5;
+        color: white;
+        width: 350px;
+        height: 180px;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .department-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+      /* ===== Events Section ===== */
+      .section-title {
+        text-align: center;
+        font-size: 2em;
+        color: #52b385;
+        margin-top: 50px;
+        margin-bottom: 30px;
+      }
+
+      .events-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        padding: 0 40px 60px;
+      }
+
+      .event-card {
+        background: linear-gradient(180deg, #4e50a7 0%, #3685ebd5 100%);
+        border-radius: 20px;
+        overflow: hidden;
+        width: 350px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .event-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      }
+
+      .event-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .event-content {
+        padding: 20px;
+      }
+
+      .event-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        color: #0e251b;
+        margin-bottom: 10px;
+      }
+
+      .event-title {
+        font-size: 1.6em;
+        color: white;
+      }
+
+      .event-description {
+        font-size: 0.95em;
+        line-height: 1.6;
+        color: #ddd;
+        margin-top: 10px;
+      }
+
+      .event-tags {
+        margin-top: 15px;
+      }
+
+      .tag {
+        background-color: #6c2bd9;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 25px;
+        font-size: 0.8em;
+        margin-right: 6px;
+        display: inline-block;
+        transition: 0.2s ease;
+      }
+
+      .tag:hover {
+        background-color: #101153;
+      }
+
+      /* ===== Comment Section ===== */
+      #comments {
+        background-color: #c9cace;
+        color: #222;
+        font-size: 20px;
+        padding: 30px;
+        margin: 50px auto;
+        border-radius: 10px;
+        width: 60%;
+      }
+
+      #comments input,
+      #comments textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 8px;
+        border: 1px solid #31334b;
+      }
+
+      #comments button {
+        background-color: #2b3746;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 9px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      #comments button:hover {
+        background-color: #212b3a;
+      }
+      .department-card {
+  width: 180px;
+  height: 120px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-family: Poppins, sans-serif;
+  cursor: pointer;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* add glowing border on hover */
+.department-card:hover {
+  box-shadow: 0 0 20px rgba(54, 133, 235, 0.6), 0 0 40px rgba(54, 133, 235, 0.3);
+  transform: scale(1.05);
+}
+/* Hover effect */
+.department-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+    </style>
+  </head>
+
+  <body>
+    <!-- About Section -->
+    <section class="ebec-about">
+      <img src="../images/ebec.png" alt="ebec logo" width="500" height="300" class="circle-img" />
+      <h2 class="ebec-title">About EBEC (ENSIA Business & Entrepreneurship Club)</h2>
+<ul class="ebec-list">
+  <li><strong>EBEC (ENSIA Business & Entrepreneurship Club)</strong> is a student organization at the <strong>National Higher School of Artificial Intelligence (ENSIA)</strong> that promotes entrepreneurship and innovation.</li>
+  <li>It serves as a <em>bridge between technology and business</em>, helping students turn ideas into impactful startup projects.</li>
+  <li>Founded in <strong>2023</strong>, EBEC organizes <strong>workshops, startup challenges, fairs, and networking events</strong> that connect students with professionals and companies.</li>
+  <li>Its mission is to <strong>empower future entrepreneurs</strong>, <strong>encourage creativity</strong>, and <strong>foster leadership</strong> within the ENSIA community.</li>
+  <li>Whether you dream of launching a startup or learning business skills, EBEC is the place to <strong>ignite your entrepreneurial spirit</strong>.</li>
+  <li><strong>EBEC — Inspire. Build. Lead.</strong></li>
+</ul>
+
+    </section>
+
+    <!-- Departments Section -->
+    <section id="departments">
+  <h2>Our Departments</h2>
+
+<div class="departments-container">
+  <div class="department-card"><h4 id="ai">Artificial Intelligence</h4></div>
+  <div class="department-card"><h4 id="sd">Software Development</h4></div>
+  <div class="department-card"><h4 id="robotics">Robotics & Innovation</h4></div>
+  <div class="department-card"><h4 id="design">Design & Visual Identity</h4></div>
+  <div class="department-card"><h4 id="media">Media & Communication</h4></div>
+  <div class="department-card"><h4 id="hr">Human Resources</h4></div>
+  <div class="department-card"><h4 id="pr">Public Relations</h4></div>
+  <div class="department-card"><h4 id="marketing">Marketing</h4></div>
+</div>
+
+</section>
+
+
+    <!-- Comments Section -->
+    <section id="comments">
+      <h2>Leave a comment</h2>
+      <form>
+        <label>Name:</label><br />
+        <input type="text" name="name" required /><br /><br />
+
+        <label>Comment:</label><br />
+        <textarea name="comment" rows="5" required></textarea><br /><br />
+
+        <button type="submit">Post Comment</button>
+      </form>
+    </section>
+
+    <!-- Events Section -->
+    <h2 class="section-title">Upcoming Events</h2>
+    <div class="events-container">
+      <div class="event-card">
+        <img src="../images/ignite ebec.png" alt="IGNITE" class="event-image" />
+        <div class="event-content">
+          <div class="event-header">
+            <span class="event-number">01</span>
+            <span class="event-date">2025-09-19</span>
+          </div>
+          <h4 class="event-title">IGNITE</h4>
+          <p class="event-description">
+            Dynamic platform designed to bridge students with economic institutions, fostering start-ups and market-relevant projects.
+          </p>
+          <div class="event-tags">
+            <span class="tag">companies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script id="department" src="../all.js/ebec.js"></script>
+  </body>
+</html>
