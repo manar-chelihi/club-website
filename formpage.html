@@ -1,72 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Page</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  <body class="flex flex-col items-center justify-center text-white my-[50px] bg-[url('/images/clubform.jpg')] bg-cover bg-center bg-no-repeat ">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Club Form</title>
+    <link rel="stylesheet" href="formpage.css" />
+  </head>
 
-    <div class="flex flex-col items-center justify-center gap-[30px] pt-[50px] pb-[20px] px-[50px] bg-gray-900 rounded-[10px_60px_30px]">
+  <body class="form-body">
+    <div class="form-container">
+      <p class="form-title">Join This Club By Filling The Form</p>
 
-      <p class="text-3xl font-bold text-center">Join This Club By Filling The Form</p>
-
-      <form class="join-form flex flex-col items-center justify-center gap-[30px] w-full font-bold">
-        
+      <form class="join-form">
         <!-- First/Last name -->
-        <div class="flex flex-wrap items-center justify-center gap-[100px]">
-          <div class="flex items-center gap-[20px]">
-            <label for="fname" class="text-xl">First name</label>
-            <input type="text" id="fname" class="py-[10px] px-[50px] border-2 rounded-2xl text-black">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname" class="form-label">First name</label>
+            <input type="text" id="fname" class="form-input" />
           </div>
-          <div class="flex items-center gap-[20px]">
-            <label for="lname" class="text-xl" >Last name</label>
-            <input type="text" id="lname" class="py-[10px] px-[50px] border-2 rounded-2xl text-black">
+          <div class="form-group">
+            <label for="lname" class="form-label">Last name</label>
+            <input type="text" id="lname" class="form-input" />
           </div>
         </div>
 
         <!-- Email/Student ID -->
-        <div class="flex flex-wrap items-center justify-center gap-[100px]">
-          <div class="flex items-center gap-[20px]">
-            <label for="email" class="text-xl" >School email</label>
-            <input type="text" id="email" class="py-[10px] px-[50px] border-2 rounded-2xl text-black">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email" class="form-label">School email</label>
+            <input type="text" id="email" class="form-input" />
           </div>
-          <div class="flex items-center gap-[20px]">
-            <label for="student-id" class="text-xl" >Student Id</label>
-            <input type="text" id="student-id" class="py-[10px] px-[50px] border-2 rounded-2xl text-black">
+          <div class="form-group">
+            <label for="student-id" class="form-label">Student Id</label>
+            <input type="text" id="student-id" class="form-input" />
           </div>
         </div>
 
         <!-- Departments -->
-        <p class="text-xl">Departments:</p>
-        <div class="flex flex-wrap justify-center gap-[50px] w-[600px]">
-          <div class="flex flex-col gap-[10px]">
-            <label><input type="checkbox" class="mr-2 dept">UI UX Design</label>
-            <label><input type="checkbox" class="mr-2 dept">Web Development</label>
+        <p class="dept-title">Departments:</p>
+        <div class="dept-section">
+          <div class="dept-column">
+            <label><input type="checkbox" class="dept" /> UI UX Design</label>
+            <label><input type="checkbox" class="dept" /> Web Development</label>
           </div>
 
-          <div class="flex flex-col gap-[10px]">
-            <label><input type="checkbox" class="mr-2 dept ">Graphic Design</label>
-            <label><input type="checkbox" class="mr-2 dept">Security</label>
+          <div class="dept-column">
+            <label><input type="checkbox" class="dept" /> Graphic Design</label>
+            <label><input type="checkbox" class="dept" /> Security</label>
           </div>
 
-          <div class="flex flex-col gap-[10px]">
-            <label><input type="checkbox" class="mr-2 dept">APP Development</label>
-            <label><input type="checkbox" class="mr-2 dept">Robotics</label>
+          <div class="dept-column">
+            <label><input type="checkbox" class="dept" /> APP Development</label>
+            <label><input type="checkbox" class="dept" /> Robotics</label>
           </div>
         </div>
 
         <!-- Submit -->
-        <div class="flex justify-center w-full">
-          <button type="submit"
-            class="border-2 p-[8px] rounded-2xl bg-white text-gray-900 font-semibold hover:scale-[1.1] hover:bg-gray-800 hover:text-white hover:border-gray-800 transition">
-            Submit
-          </button>
+        <div class="submit-container">
+          <button type="submit" class="submit-btn">Submit</button>
         </div>
       </form>
     </div>
 
     <script src="joinclub.js"></script>
-  </head>
   </body>
 </html>

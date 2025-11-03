@@ -1,42 +1,48 @@
-// home.js
-// Check user state from localStorage and manage buttons
-
 document.addEventListener("DOMContentLoaded", () => {
-  const joinBtn = document.getElementsByClassName("join-btn")[0];
-  const leaveBtn = document.getElementsByClassName("leave-btn")[0];
-  const clubImg = document.getElementsByClassName("club-image")[0];
-  
-  // Check if user is already a member
-  const isMember = localStorage.getItem("isMember") === "true";
+  const clubCards = document.querySelectorAll(".club-card");
 
-  // Toggle buttons based on membership
-  if (isMember) {
-    joinBtn.style.display = "none";
-    leaveBtn.style.display = "inline-block";
-  } else {
-    joinBtn.style.display = "inline-block";
-    leaveBtn.style.display = "none";
-  }
+  // Loop through every club card
+  clubCards.forEach((card) => {
+    const joinBtn = card.querySelector(".join-btn");
+    const leaveBtn = card.querySelector(".leave-btn");
+    const clubImg = card.querySelector(".club-image");
+    const clubName = card.getAttribute("data-club");
 
-  // When click "Join"
-  joinBtn.addEventListener("click", () => {
-    window.location.href = "formpage.html";
-  });
 
-  // When click "Leave"
-  leaveBtn.addEventListener("click", () => {
-    localStorage.setItem("isMember", "false");
-    alert("You left the club!");
-    window.location.reload(); // Refresh to update button state
-  });
 
-  // Redirect when click on club image
-  clubImg.addEventListener("click", () => {
+    // Check if user is already a member of this specific club
+    const isMember = localStorage.getItem(`${clubName}_isMember`) === "true";
+
+    // Toggle buttons based on membership
     if (isMember) {
-      window.location.href = "clubpage.html";
+      joinBtn.style.display = "none";
+      leaveBtn.style.display = "inline-block";
     } else {
-      alert("Please join the club to access this page.");
-      window.location.href = "formpage.html";
+      joinBtn.style.display = "inline-block";
+      leaveBtn.style.display = "none";
     }
+
+    // When click "Join"
+    joinBtn.addEventListener("click", () => {
+      localStorage.setItem(`${clubName}_isMember`, "true");
+      window.location.href = "formpage.html";
+    });
+
+    // When click "Leave"
+    leaveBtn.addEventListener("click", () => {
+      localStorage.setItem(`${clubName}_isMember`, "false");
+      alert("You left the club!");
+      window.location.reload();
+    });
+
+    // When click on the club image
+    clubImg.addEventListener("click", () => {
+      if (isMember) {
+        window.location.href = "clubpage.html";
+      } else {
+        alert("Please join the club to access this page.");
+        window.location.href = "formpage.html";
+      }
+    });
   });
 });
