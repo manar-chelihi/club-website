@@ -43,6 +43,7 @@ let clubs = [];
     function deleteClub(id) {
       clubs = clubs.filter(c => c.id !== id);
       renderClubs();
+      saveToLocalStorage();
       refreshDropdowns();
     }
 
@@ -52,6 +53,7 @@ let clubs = [];
       if (name && clubId) {
         events.push({id: idCounter++, name, clubId});
         document.getElementById("eventName").value = "";
+        saveToLocalStorage();
         renderEvents();
       }
     }
@@ -73,6 +75,7 @@ let clubs = [];
     function deleteEvent(id) {
       events = events.filter(e => e.id !== id);
       renderEvents();
+      saveToLocalStorage();
     }
 
     function addStudent() {
@@ -81,6 +84,7 @@ let clubs = [];
       if (name && clubId) {
         students.push({id: idCounter++, name, clubId});
         document.getElementById("studentName").value = "";
+        saveToLocalStorage();
         renderStudents();
       }
     }
@@ -102,6 +106,7 @@ let clubs = [];
     function deleteStudent(id) {
       students = students.filter(s => s.id !== id);
       renderStudents();
+      saveToLocalStorage();
     }
 
     function addAdmin() {
@@ -110,6 +115,7 @@ let clubs = [];
       if (name && clubId) {
         admins.push({id: idCounter++, name, clubId});
         document.getElementById("adminName").value = "";
+        saveToLocalStorage();
         renderAdmins();
       }
     }
@@ -131,6 +137,7 @@ let clubs = [];
     function deleteAdmin(id) {
       admins = admins.filter(a => a.id !== id);
       renderAdmins();
+      saveToLocalStorage();
     }
 
     function refreshDropdowns() {
@@ -174,4 +181,38 @@ document.addEventListener('DOMContentLoaded', () => {
       nav.classList.toggle('active-sidebar');
     });
   }
+});
+     function saveToLocalStorage(){
+
+        localStorage.setItem('clubs', JSON.stringify(clubs));
+        localStorage.setItem('events', JSON.stringify(events));
+      localStorage.setItem('students', JSON.stringify(students));
+      localStorage.setItem('admins', JSON.stringify(admins));
+    localStorage.setItem('idcounter', idCounter.toString());
+
+     }
+     function loadFromLocalStorage(){
+    const savedClubs=localStorage.getItem('clubs');
+    const savedEvents=localStorage.getItem('events');
+    const savedStudents=localStorage.getItem('students');
+    const savedAdmins=localStorage.getItem('admins');
+    const savedIdCounter=localStorage.getItem('idcounter');
+
+if (savedClubs) clubs = JSON.parse(savedClubs);
+  if (savedEvents) events = JSON.parse(savedEvents);
+  if (savedStudents) students = JSON.parse(savedStudents);
+  if (savedAdmins) admins = JSON.parse(savedAdmins);
+  if (savedIdCounter) idCounter = parseInt(savedIdCounter);
+}
+
+     
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadFromLocalStorage();
+  renderClubs();
+  renderEvents();
+  renderStudents();
+  renderAdmins();
+  refreshDropdowns();
 });
