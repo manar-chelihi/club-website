@@ -79,3 +79,123 @@ items.forEach((item, i) => {
     });
   });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Check authentication
+    if (localStorage.getItem('isAdmin') !== "true") {
+        alert("Please login first!");
+        window.location.href = "login.html";
+        return;
+    }
+
+    // Add logout functionality
+    addLogoutButton();
+    
+    // Handle your form submissions
+    setupYourFormHandlers();
+    
+    // Load any existing data
+    loadExistingData();
+});
+
+function addLogoutButton() {
+    const sidebar = document.querySelector('.sidebar');
+    const logoutItem = document.createElement('div');
+    logoutItem.className = 'nav-item';
+    logoutItem.innerHTML = '<span onclick="adminLogout()"><p>🚪 Logout</p></span>';
+    sidebar.appendChild(logoutItem);
+}
+
+function adminLogout() {
+    localStorage.removeItem('isAdmin');
+    localStorage.removeItem('adminEmail');
+    localStorage.removeItem('adminRole');
+    localStorage.removeItem('loginTime');
+    window.location.href = "login.html";
+}
+
+function setupYourFormHandlers() {
+    // Handle post form
+    const postForm = document.querySelector('#pos form');
+    if (postForm) {
+        postForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            savePostToStorage();
+        });
+    }
+
+    
+    const deptForm = document.querySelector('#shef form');
+    if (deptForm) {
+        deptForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            saveDepartmentToStorage();
+        });
+    }
+}
+
+function savePostToStorage() {
+    const eventInput = document.querySelector('#pos input[type="text"]');
+    const descInput = document.querySelector('#pos textarea');
+    
+    if (eventInput && descInput) {
+        const postData = {
+            event: eventInput.value,
+            description: descInput.value,
+            timestamp: new Date().toISOString(),
+            author: localStorage.getItem('adminEmail')
+        };
+        
+      
+        let posts = JSON.parse(localStorage.getItem('adminPosts') || '[]');
+        posts.push(postData);
+        localStorage.setItem('adminPosts', JSON.stringify(posts));
+        
+        alert('Post saved successfully!');
+        eventInput.value = '';
+        descInput.value = '';
+    }
+}
+
+function saveDepartmentToStorage() {
+    const completedShef = document.querySelector('#shefcompleted');
+    const newShef = document.querySelector('#shefNew');
+    
+    if (completedShef && newShef) {
+        const deptData = {
+            completedShef: completedShef.value,
+            newShef: newShef.value,
+            timestamp: new Date().toISOString(),
+            changedBy: localStorage.getItem('adminEmail')
+        };
+        
+        // Save department changes
+        let deptChanges = JSON.parse(localStorage.getItem('departmentChanges') || '[]');
+        deptChanges.push(deptData);
+        localStorage.setItem('departmentChanges', JSON.stringify(deptChanges));
+        
+        alert('Department changes saved!');
+        completedShef.value = '';
+        newShef.value = '';
+    }
+}
+
+function loadExistingData() {
+    // Load and display existing posts
+    const posts = JSON.parse(localStorage.getItem('adminPosts') || '[]');
+    console.log('Existing posts:', posts);
+    
+    // Load and display department changes
+    const deptChanges = JSON.parse(localStorage.getItem('departmentChanges') || '[]');
+    console.log('Department changes:', deptChanges);
+}
+
+// Your existing scroll function (keep it)
+function scrollToElement(elementId) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+}

@@ -59,7 +59,7 @@
             width: 90%;
             box-sizing: border-box;
             border-radius: 0 7px 0 7px ;
-            font-size: 30px;
+            font-size: 20px;
         }
        .all{
         display: flex;
@@ -119,7 +119,9 @@
     }
     
       @media   (max-width: 500px)   {
-
+        *{
+          font-size: 15px;
+        }
       .content{
        scale: 0.7;
        margin-left: 2px;
@@ -131,6 +133,9 @@
        position: relative;
        left: 10;
        font-size: 20px;
+       }
+       .sidebar > div > span > p {
+        font-size: 20px;
        }
        }
 
@@ -195,7 +200,7 @@
     --color-hover: #60b99a;
   }
   &:nth-child(6) {
-    --color-hover: #fad089;
+    --color-hover: hsl(27, 70%, 35%);
   }
   &:nth-child(7) {
     --color-hover: #ff9c5b;
@@ -210,7 +215,7 @@
     --color-hover: #60b99a;
   }
   &:nth-child(11) {
-    --color-hover: #fad089;
+    --color-hover: hsl(27, 70%, 35%);
   }
   &:nth-child(12) {
     --color-hover: #ff9c5b;
@@ -225,7 +230,7 @@
     --color-hover: #60b99a;
   }
     &:nth-child(16) {
-    --color-hover: #fad089;
+    --color-hover: hsl(27, 70%, 35%);
   }
   &:nth-child(17) {
     --color-hover: #ff9c5b;
@@ -240,7 +245,7 @@
     --color-hover: #60b99a;
   }
   &:nth-child(21) {
-    --color-hover: #fad089;
+    --color-hover: hsl(27, 70%, 35%);
   }
   &:nth-child(22) {
     --color-hover: #ff9c5b;
@@ -255,7 +260,7 @@
     --color-hover: #60b99a;
   }
     &:nth-child(26) {
-    --color-hover: #fad089;
+    --color-hover: hsl(27, 70%, 35%);
   }
   &:nth-child(27) {
     --color-hover: #ff9c5b;
