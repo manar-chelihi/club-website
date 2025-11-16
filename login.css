@@ -68,3 +68,25 @@ body.login-body {
   color: white;
   border-color: white;
 }
+
+.success {
+  border-color: #28a745;       
+  outline: none;
+}
+.error {
+  border-color: #dc3545;      
+  outline: none;
+}
+/* message displayed */
+.error + small {
+  color: #dc3545;              
+  visibility: visible;
+}
+
+@media(max-width: 600px) {
+    .login-form {
+      width: 70%;
+      padding: 30px 20px 20px 20px;
+    }
+  }
+
