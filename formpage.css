@@ -55,7 +55,8 @@ body.form-body {
 /* === Individual label/input group === */
 .form-group {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   gap: 20px;
 }
 
@@ -120,4 +121,51 @@ body.form-body {
   background-color: #1f2937; /* gray-800 */
   color: white;
   border-color: #1f2937;
+}
+.success {
+  border-color: #28a745;       
+  outline: none;
+}
+.error {
+  border-color: #dc3545;      
+  outline: none;
+}
+/* message displayed */
+.error + small {
+  color: #dc3545;              
+  visibility: visible;
+}
+.success + small{
+  visibility: hidden;
+}
+.dept-section small {
+  visibility: hidden;
+}
+/* when dept-section has error we show the message */
+.dept-section.error small {
+  color: #dc3545;
+  visibility: visible;
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    width: 60%;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .form-label{
+    font-size: 1.1rem;
+  }
+
+  .dept-section {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .form-input {
+    padding: 10px 10px;
+  }
 }
