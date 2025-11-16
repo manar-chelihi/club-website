@@ -9,7 +9,7 @@
 
   <body class="form-body">
     <div class="form-container">
-      <p class="form-title">Join This Club By Filling The Form</p>
+      <p class="form-title"></p>
 
       <form class="join-form">
         <!-- First/Last name -->
@@ -17,22 +17,26 @@
           <div class="form-group">
             <label for="fname" class="form-label">First name</label>
             <input type="text" id="fname" class="form-input" />
+            <small></small>
           </div>
-          <div class="form-group">
+          <div class="form-group ">
             <label for="lname" class="form-label">Last name</label>
             <input type="text" id="lname" class="form-input" />
+            <small></small>
           </div>
         </div>
 
         <!-- Email/Student ID -->
         <div class="form-row">
-          <div class="form-group">
+          <div class="form-group ">
             <label for="email" class="form-label">School email</label>
             <input type="text" id="email" class="form-input" />
+            <small></small>
           </div>
-          <div class="form-group">
+          <div class="form-group ">
             <label for="student-id" class="form-label">Student Id</label>
             <input type="text" id="student-id" class="form-input" />
+            <small></small>
           </div>
         </div>
 
@@ -40,19 +44,41 @@
         <p class="dept-title">Departments:</p>
         <div class="dept-section">
           <div class="dept-column">
-            <label><input type="checkbox" class="dept" /> UI UX Design</label>
-            <label><input type="checkbox" class="dept" /> Web Development</label>
+            <div class="form-control">
+              <label > UI UX Design</label>
+              <input type="checkbox" class="dept" value="UI UX Design" />
+            </div>
+            <div class="form-control">
+              <label >Web Development</label>
+              <input type="checkbox" class="dept" value="Web Development"/>
+            </div>
           </div>
 
           <div class="dept-column">
-            <label><input type="checkbox" class="dept" /> Graphic Design</label>
-            <label><input type="checkbox" class="dept" /> Security</label>
+            <div class="form-control">
+              <label > Graphic Design</label>
+              <input type="checkbox" class="dept" value="Graphic Design" />
+            </div>
+
+            <div class="form-control">
+              <label >Security</label>
+              <input type="checkbox" class="dept"  value="Security"/>
+            </div>
           </div>
 
           <div class="dept-column">
-            <label><input type="checkbox" class="dept" /> APP Development</label>
-            <label><input type="checkbox" class="dept" /> Robotics</label>
+            <div class="form-control">
+              <label > App Development</label>
+              <input type="checkbox" class="dept"  value="App Development"/>
+            </div>
+
+            <div class="form-control">
+              <label > Robotics</label>
+              <input type="checkbox" class="dept"  value="Robotics"/>
+            </div>
           </div>
+
+          <small></small>
         </div>
 
         <!-- Submit -->
