@@ -23,6 +23,7 @@ let clubs = [];
         clubs.push({id: idCounter++, name});
         document.getElementById("clubName").value = "";
         renderClubs();
+        saveToLocalStorage();
         refreshDropdowns();
       }
     }
@@ -78,30 +79,33 @@ let clubs = [];
       saveToLocalStorage();
     }
 
-    function addStudent() {
-      let name = document.getElementById("studentName").value;
-      let clubId = document.getElementById("studentClub").value;
-      if (name && clubId) {
-        students.push({id: idCounter++, name, clubId});
-        document.getElementById("studentName").value = "";
-        saveToLocalStorage();
-        renderStudents();
-      }
-    }
+   function addStudent() {
+  let name = document.getElementById("studentName").value;
+  let email = document.getElementById("studentEmail").value;
+  let clubId = document.getElementById("studentClub").value;
+  if (name && email && clubId) {
+    students.push({id: idCounter++, name, email, clubId});
+    document.getElementById("studentName").value = "";
+    document.getElementById("studentEmail").value = "";
+    saveToLocalStorage();
+    renderStudents();
+  }
+}
 
     function renderStudents() {
-      let table = document.getElementById("studentsTable");
-      table.innerHTML = "";
-      students.forEach(s => {
-        let club = clubs.find(c => c.id == s.clubId)?.name || "N/A";
-        table.innerHTML += `<tr>
-          <td>${s.id}</td>
-          <td>${s.name}</td>
-          <td>${club}</td>
-          <td><button onclick="deleteStudent(${s.id})">Supprimer</button></td>
-        </tr>`;
-      });
-    }
+  let table = document.getElementById("studentsTable");
+  table.innerHTML = "";
+  students.forEach(s => {
+    let club = clubs.find(c => c.id == s.clubId)?.name || "N/A";
+    table.innerHTML += `<tr>
+      <td>${s.id}</td>
+      <td>${s.name}</td>
+      <td>${s.email || ''}</td>
+      <td>${club}</td>
+      <td><button onclick="deleteStudent(${s.id})">Supprimer</button></td>
+    </tr>`;
+  });
+}
 
     function deleteStudent(id) {
       students = students.filter(s => s.id !== id);
@@ -152,19 +156,6 @@ let clubs = [];
       });
     }
 
-
-    const input = document.querySelector('.anyInput');
-    input.addEventListener('input', function() {
-        let length = input.value.length;
-        let fontSize=20;
-        if(length>10) fontSize=18;
-        if(length>20) fontSize=16;
-        if(length>30) fontSize=14;
-        if(length>40) fontSize=12;
-        if(length>50) fontSize=10;
-        input.style.fontSize = fontSize + 'px';
-    }
-    );
   const menuIcon = document.querySelector('.menu-icon');
   const sidebar= document.getElementById('sidebar');
   menuIcon.addEventListener('click', () => {
@@ -188,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('events', JSON.stringify(events));
       localStorage.setItem('students', JSON.stringify(students));
       localStorage.setItem('admins', JSON.stringify(admins));
-    localStorage.setItem('idcounter', idCounter.toString());
+    localStorage.setItem('idCounter', idCounter.toString());
 
      }
      function loadFromLocalStorage(){
@@ -196,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedEvents=localStorage.getItem('events');
     const savedStudents=localStorage.getItem('students');
     const savedAdmins=localStorage.getItem('admins');
-    const savedIdCounter=localStorage.getItem('idcounter');
+    const savedIdCounter=localStorage.getItem('idCounter');
 
 if (savedClubs) clubs = JSON.parse(savedClubs);
   if (savedEvents) events = JSON.parse(savedEvents);

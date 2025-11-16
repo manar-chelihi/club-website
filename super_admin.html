@@ -65,11 +65,12 @@
       <div id="students" class="card" style="display:none;">
         <h2>👨‍🎓Student Management</h2>
         <input type="text" id="studentName" class="anyInput" placeholder="Student name">
+        <input type="email" id="studentEmail" placeholder="Student email">
         <select id="studentClub"></select>
         <button onclick="addStudent()">➕Add Student</button>
         <table>
           <thead>
-            <tr><th>ID</th><th>Name</th><th>Club</th><th>Actions</th></tr>
+            <tr><th>ID</th><th>Name</th><th>Email</th><th>Club</th><th>Actions</th></tr>
           </thead>
           <tbody id="studentsTable"></tbody>
         </table>

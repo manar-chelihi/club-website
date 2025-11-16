@@ -156,16 +156,6 @@ table th {
   background: #f4f6f9;
   color: #34495e;
 }
-@media (max-width: 900px) {
-  .container {
-display: flex;  }
-  nav {
-    min-height: unset;
-    box-shadow: none;
-    padding: 18px 10px;
-    flex-shrink:1;
-  }
-}
 
 .menu-icon.active div:first-child {
   transform: rotate(45deg) translate(5px, 5px);
