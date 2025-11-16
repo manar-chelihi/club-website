@@ -201,21 +201,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // Define club members for different admin clubs
     const clubMembers = {
         "chelihimanar38@gmail.com": [
-            "Mohammed", "Ahmed", "Ali", "Khalid", "Fatima", 
-            "Maryam", "Youssef", "Omar", "Sarah", "Layla",
-            "Hassan", "Zainab", "Aisha", "Ibrahim", "Nour",
-            "Reem", "Osama", "Huda", "Mustafa", "Amina"
+            "Mohamemd,mohammed@ensia.edu.dz", "Ahmed,ahmed@ensia.edu.dz", "Ali,ali@ensia.edu.dz", "Khalid,khalid@ensia.edu.dz", "Fatima,fatima@ensia.edu.dz", 
+            "Maryam,maryam@ensia.edu.dz", "Youssef,youssef@ensia.edu.dz", "Omar,omar@ensia.edu.dz", "Sarah,sarah@ensia.edu.dz", "Layla,layla@ensia.edu.dz",
+            "Hassan,hassan@ensia.edu.dz", "Zainab,zainab@ensia.edu.dz", "Aisha,aisha@ensia.edu.dz", "Ibrahim,ibrahim@ensia.edu.dz", "Nour,nour@ensia.edu.dz",
+            "Reem,reem@ensia.edu.dz", "Osama,osama@ensia.edu.dz", "Huda,huda@ensia.edu.dz", "Mustafa,mustafa@ensia.edu.dz", "Amina,amina@ensia.edu.dz"
         ],
         "admin1@gmail.com": [
-            "John", "Michael", "David", "Robert", "Jennifer",
-            "Lisa", "Susan", "Jessica", "Thomas", "Daniel"
+            "John,jhon@ensia.edu.dz", "Michael,michael@ensia.edu.dz", "David,david@ensia.edu.dz", "Robert,robert@ensia.edu.dz", "Jennifer,jennifer@ensia.edu.dz",
+            "Lisa,lisa@ensia.edu.dz", "Susan,susan@ensia.edu.dz", "Jessica,jessica@ensia.edu.dz", "Thomas,thomas@ensia.edu.dz", "Daniel,daniel@ensia.edu.dz"
         ],
         "admin2@gmail.com": [
-            "Emily", "Christopher", "Sarah", "Kevin", "Amanda",
-            "James", "Nicole", "Andrew", "Elizabeth", "Brian"
+            "Emily,emily@ensia.edu.dz", "Christopher,chrostopher@ensia.edu.dz", "Sarah,sarah@ensia.edu.dz", "Kevin,kevin@ensia.edu.dz", "Amanda,amanda@ensia.edu.dz",
+            "James,james@ensia.edu.dz", "Nicole,nicole@ensia.edu.dz", "Andrew,andrew@ensia.edu.dz", "Elizabeth,elizabeth@ensia.edu.dz", "Brian,brian@ensia.edu.dz"
         ]
     };
-
+   const clubLogos = {
+        "chelihimanar38@gmail.com": "imgs/ebec.png",
+        "admin1@gmail.com": "imgs/etc.jpg", 
+        "admin2@gmail.com": "imgs/skill and tell.jpg"
+    };
     // Get current admin email from localStorage
     const adminEmail = localStorage.getItem('adminEmail');
     
@@ -232,7 +236,10 @@ document.addEventListener('DOMContentLoaded', () => {
             memberList.appendChild(li);
         });
     }
-
+   const logoImg = document.querySelector('#members form img');
+    if (logoImg && adminEmail && clubLogos[adminEmail]) {
+        logoImg.src = clubLogos[adminEmail];
+    }
     // Keep the existing scroll functionality
     window.scrollToElement = function(elementId) {
         const element = document.getElementById(elementId);

@@ -3,6 +3,7 @@
        width: 100%;
        margin: 0%;
        margin-bottom: 3%;
+      font-size: 25px;
    }
     div{
           width: 60%;
@@ -32,7 +33,7 @@
         }
         form > h2
         {
-          font-size: 20px;
+          font-size: 34px;
         }
        form:hover{
         transform: translateY(-7px) ;
@@ -40,7 +41,7 @@
         label {
             color: aqua;
             text-shadow:-1px 1px 1px #cf48f4;
-            font-size: 20px;
+            font-size: 30px;
             display: block;
             margin-bottom: 5px;
             text-align:  center;
@@ -59,7 +60,7 @@
             width: 90%;
             box-sizing: border-box;
             border-radius: 0 7px 0 7px ;
-            font-size: 20px;
+            font-size: 33px;
         }
        .all{
         display: flex;
@@ -89,6 +90,7 @@
             background-color: rgb(255, 255, 255);
             border-radius: 8px;
             padding: 20px;
+            padding-left: 35px;
             box-shadow: -2px 2px 7px rgba(0, 0, 0);
         }       
         .nav-item {
@@ -102,7 +104,7 @@
             text-shadow: -1px 1px 1px #ed4cf0;
             align-items: center;
             gap: 10px;
-            font-size:  20px;
+            font-size:  90px;
         }    
         .nav-item:hover {
             background-color: rgba(0, 0, 0, 0.10);
@@ -120,22 +122,32 @@
     
       @media   (max-width: 500px)   {
         *{
-          font-size: 15px;
+          font-size: 10px;
         }
       .content{
        scale: 0.7;
        margin-left: 2px;
        position: sticky;
-       top: 20px;
+       top: 10px;
        }
       .right{
-       scale: 0.87;
+       scale: 0.7;
        position: relative;
        left: 10;
-       font-size: 20px;
+       bottom: 300px;
+       
        }
+        input, select, textarea{
+          font-size: 15px;
+        }
+        label{
+          font-size: 12px;
+        }
        .sidebar > div > span > p {
-        font-size: 20px;
+        font-size: small;
+       }
+       #members{
+        font-size: 12px;
        }
        }
 
@@ -154,14 +166,14 @@
   --color-active: #ffffff;
   --color-start: #010406;
 
- 
+  
   --stop-hover: 0%;
   --stop-active: 0%;
 
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: clamp(1rem, 8vw, 2rem);
+  font-size: 23px;
   font-weight: bold;
   line-height: 0.88;
   background: rgb(255, 255, 255);
