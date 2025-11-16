@@ -217,14 +217,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
    const clubLogos = {
         "chelihimanar38@gmail.com": "imgs/ebec.png",
-        "admin1@gmail.com": "imgs/etc.jpg", 
+        "admin1@gmail.com": "imgs/best.jpg", 
         "admin2@gmail.com": "imgs/skill and tell.jpg"
     };
     // Get current admin email from localStorage
     const adminEmail = localStorage.getItem('adminEmail');
     
     // Update members list based on admin's club
-    const memberList = document.querySelector('#members .c-g');
+    const memberList = document.querySelector(' .c-g');
     if (memberList && adminEmail && clubMembers[adminEmail]) {
         // Clear existing list
         memberList.innerHTML = '';
