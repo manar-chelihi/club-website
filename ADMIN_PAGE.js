@@ -21,11 +21,6 @@ window.location.href = "form.html"
 
 });*/
 
-
-
-
-
-
 const items = document.querySelectorAll(".c-g li");
 
 const customEase = CustomEase.create("custom", "M0,0 C0.548,0.032 0.63,1 1,1 ");
@@ -80,7 +75,7 @@ items.forEach((item, i) => {
   });
 });
 
-
+/*
 
 document.addEventListener('DOMContentLoaded', () => {
     // Check authentication
@@ -199,3 +194,50 @@ function scrollToElement(elementId) {
         element.scrollIntoView({ behavior: 'smooth' });
     }
 }
+    */
+   // ADMIN_PAGE.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Define club members for different admin clubs
+    const clubMembers = {
+        "chelihimanar38@gmail.com": [
+            "Mohammed", "Ahmed", "Ali", "Khalid", "Fatima", 
+            "Maryam", "Youssef", "Omar", "Sarah", "Layla",
+            "Hassan", "Zainab", "Aisha", "Ibrahim", "Nour",
+            "Reem", "Osama", "Huda", "Mustafa", "Amina"
+        ],
+        "admin1@gmail.com": [
+            "John", "Michael", "David", "Robert", "Jennifer",
+            "Lisa", "Susan", "Jessica", "Thomas", "Daniel"
+        ],
+        "admin2@gmail.com": [
+            "Emily", "Christopher", "Sarah", "Kevin", "Amanda",
+            "James", "Nicole", "Andrew", "Elizabeth", "Brian"
+        ]
+    };
+
+    // Get current admin email from localStorage
+    const adminEmail = localStorage.getItem('adminEmail');
+    
+    // Update members list based on admin's club
+    const memberList = document.querySelector('#members .c-g');
+    if (memberList && adminEmail && clubMembers[adminEmail]) {
+        // Clear existing list
+        memberList.innerHTML = '';
+        
+        // Add members from the admin's club
+        clubMembers[adminEmail].forEach(member => {
+            const li = document.createElement('li');
+            li.textContent = member;
+            memberList.appendChild(li);
+        });
+    }
+
+    // Keep the existing scroll functionality
+    window.scrollToElement = function(elementId) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+});
