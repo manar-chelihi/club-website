@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- ensures site adapts properly to mobile screen -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GDJ Club Page</title>
+  <link rel="icon" href="" type="image/png">
+  <link rel="stylesheet" href="../style/gdj.css">
+</head>
+
+<body>
+  <!-- Mouse Trail -->
+  <div id="trail-container"></div>
+
+  <!-- About Section -->
+   
+  <section class="gdj-about">
+    <div class="about-container">
+      <img src="../images/gdj.png" alt="GDJ logo" class="circle-img" />
+
+      <div class="about-text">
+        <h2 class="gdj-title">About GDJ (Global Developer's Jam Club)</h2>
+        <ul class="gdj-list">
+          <li><strong>GDJ Club</strong> is a student organization at the <strong>National Higher School of AI (ENSIA)</strong> that promotes coding, software development, and innovation.</li>
+          <li>We aim to bridge creativity and technology, helping students develop apps, games, and web projects.</li>
+          <li>Founded in <strong>2024</strong>, GDJ organizes <strong>hackathons, workshops, coding challenges, and networking events</strong> to connect students with professionals and companies.</li>
+          <li>Our mission is to <strong>empower developers</strong>, <strong>encourage innovation</strong>, and <strong>foster teamwork</strong> within the ENSIA community.</li>
+          <li>Whether you are a coder, designer, or entrepreneur, GDJ is the place to <strong>bring ideas to life</strong>.</li>
+          <li><strong>GDJ — Code. Create. Connect.</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Departments Section -->
+  <section id="departments">
+    <h2>Our Departments</h2>
+
+    <div class="departments-container">
+
+      <!-- Web Development -->
+      <div class="department-card">
+        <div class="card-img">
+          <img src="../images/webdev.png" alt="Web Department">
+        </div>
+        <div class="card-body">
+          <div class="front-content">
+            <h3>Web Development</h3>
+            <p class="desc">Web Dept.</p>
+            <button class="card-btn open-btn">DESCRIPTION</button>
+          </div>
+          <div class="back-content" style="display:none;">
+            <h3>About Web Development</h3>
+            <p class="desc">
+              Develops responsive websites, front-end frameworks, and web applications for GDJ projects.
+            </p>
+            <button class="card-btn back-btn">Back ←</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Development -->
+      <div class="department-card">
+        <div class="card-img">
+          <img src="../images/mobiledev.png" alt="Mobile Department">
+        </div>
+        <div class="card-body">
+          <div class="front-content">
+            <h3>Mobile Development</h3>
+            <p class="desc">Mobile Dept.</p>
+            <button class="card-btn open-btn">DESCRIPTION</button>
+          </div>
+          <div class="back-content" style="display:none;">
+            <h3>About Mobile Development</h3>
+            <p class="desc">
+              Focuses on creating Android and iOS apps, prototypes, and mobile UI/UX projects.
+            </p>
+            <button class="card-btn back-btn">Back ←</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game Development -->
+      <div class="department-card">
+        <div class="card-img">
+          <img src="../images/gamedev.png" alt="Game Development">
+        </div>
+        <div class="card-body">
+          <div class="front-content">
+            <h3>Game Development</h3>
+            <p class="desc">Game Dept.</p>
+            <button class="card-btn open-btn">DESCRIPTION</button>
+          </div>
+          <div class="back-content" style="display:none;">
+            <h3>About Game Development</h3>
+            <p class="desc">
+              Builds interactive games, simulations, and gamification projects for GDJ club activities.
+            </p>
+            <button class="card-btn back-btn">Back ←</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Design & UX -->
+      <div class="department-card">
+        <div class="card-img">
+          <img src="../images/desing and ux.png" alt="Design Department">
+        </div>
+        <div class="card-body">
+          <div class="front-content">
+            <h3>Design & UX</h3>
+            <p class="desc">Design Dept.</p>
+            <button class="card-btn open-btn">DESCRIPTION</button>
+          </div>
+          <div class="back-content" style="display:none;">
+            <h3>About Design & UX</h3>
+            <p class="desc">
+              Handles UI/UX design, graphics, and visuals to enhance GDJ projects and events.
+            </p>
+            <button class="card-btn back-btn">Back ←</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Media & Marketing -->
+      <div class="department-card">
+        <div class="card-img">
+          <img src="../images/media and marketing.png" alt="Media Department">
+        </div>
+        <div class="card-body">
+          <div class="front-content">
+            <h3>Media & Marketing</h3>
+            <p class="desc">Media Dept.</p>
+            <button class="card-btn open-btn">DESCRIPTION</button>
+          </div>
+          <div class="back-content" style="display:none;">
+            <h3>About Media & Marketing</h3>
+            <p class="desc">
+              Promotes GDJ events, manages social media, photography, and content creation.
+            </p>
+            <button class="card-btn back-btn">Back ←</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <h2 class="section-title">Upcoming Events</h2>
+  <div class="events-container">
+    <div class="event-card">
+      <img src="../images/gdj ensia events.png" alt="GDJ Hackathon" class="event-image" />
+      <div class="event-content">
+        <div class="event-header">
+          <span class="event-number">01</span>
+          <span class="event-date">2025-11-30</span>
+        </div>
+        <h4 class="event-title">GDJ Hackathon</h4>
+        <p class="event-description">
+          48-hour coding marathon to challenge developers and foster collaboration on creative tech projects.
+        </p>
+        <div class="event-tags">
+          <span class="tag">coding</span>
+          <span class="tag">innovation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comments Section -->
+  <section class="fade-in comment-box" id="comments">
+    <h2>Leave a comment</h2>
+    <form>
+      <label>Name:</label><br />
+      <input type="text" name="name" required /><br /><br />
+
+      <label>Comment:</label><br />
+      <textarea name="comment" rows="5" required></textarea><br /><br />
+
+      <button type="submit">Post Comment</button>
+    </form>
+  </section>
+
+  <script src="../all js/gdj.js"></script>
+</body>
+</html>

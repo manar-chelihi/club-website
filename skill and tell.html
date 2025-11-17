@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill & Tell Club</title>
+  <link rel="icon" href="" type="image/png" />
+  <link rel="stylesheet" href="../style/skill and tell.css" />
+</head>
+<body>
+  <div id="trail-container"></div>
+
+  <!-- About Section -->
+  <section class="club-about">
+    <div class="about-container">
+      <img src="../images/skill and tell.jpg" alt="Skill & Tell logo" class="circle-img" />
+      <div class="about-text">
+        <h2 class="club-title">About Skill & Tell Club</h2>
+        <ul class="club-list">
+          <li><strong>Skill & Tell Club</strong> is a scientific and cultural club at the <strong>ENSIA</strong>.</li>
+          <li>It focuses on developing both <em>technical and soft skills</em>, helping students grow personally and professionally through interactive activities.</li>
+          <li>The club aims to bridge <strong>communication, teamwork, and creativity</strong> with technology.</li>
+          <li>Through <strong>training sessions, workshops, and events</strong>, Skill & Tell empowers students to gain confidence and leadership skills.</li>
+          <li><strong>Skill & Tell — Where Skills Meet Expression.</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Departments Section -->
+  <section id="departments">
+    <h2>Our Departments</h2>
+    <div class="departments-container">
+
+      <div class="department-card">
+        <div class="card-img">
+          <img src="../images/leadership.png" alt="Leadership & Strategy" />
+        </div>
+        <div class="card-body">
+          <div class="front-content">
+            <h3>Leadership & Strategy</h3>
+            <p class="desc">Defining vision and coordinating teams</p>
+            <button class="card-btn open-btn">DESCRIPTION</button>
+          </div>
+          <div class="back-content" style="display: none;">
+            <h3>About Leadership & Strategy</h3>
+            <p class="desc">Responsible for defining the club’s vision and ensuring effective coordination across all teams.</p>
+            <button class="card-btn back-btn">Back ←</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="department-card">
+        <div class="card-img">
+          <img src="../images/partnership.png" alt="External Relations" />
+        </div>
+        <div class="card-body">
+          <div class="front-content">
+            <h3>External Relations</h3>
+            <p class="desc">Partnerships and collaborations</p>
+            <button class="card-btn open-btn">DESCRIPTION</button>
+          </div>
+          <div class="back-content" style="display: none;">
+            <h3>About External Relations</h3>
+            <p class="desc">Building partnerships with organizations, sponsors, and specialists to support club initiatives.</p>
+            <button class="card-btn back-btn">Back ←</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="department-card">
+        <div class="card-img">
+          <img src="../images/marketing.png" alt="Marketing" />
+        </div>
+        <div class="card-body">
+          <div class="front-content">
+            <h3>Marketing</h3>
+            <p class="desc">Promoting events and campaigns</p>
+            <button class="card-btn open-btn">DESCRIPTION</button>
+          </div>
+          <div class="back-content" style="display: none;">
+            <h3>About Marketing</h3>
+            <p class="desc">Creating and managing marketing campaigns to promote events and enhance visibility.</p>
+            <button class="card-btn back-btn">Back ←</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="department-card">
+        <div class="card-img">
+          <img src="../images/media.png" alt="Media & Multimedia" />
+        </div>
+        <div class="card-body">
+          <div class="front-content">
+            <h3>Media & Multimedia</h3>
+            <p class="desc">Photography, video, and design</p>
+            <button class="card-btn open-btn">DESCRIPTION</button>
+          </div>
+          <div class="back-content" style="display: none;">
+            <h3>About Media & Multimedia</h3>
+            <p class="desc">Handles photography, videography, and media design for the club’s events and online presence.</p>
+            <button class="card-btn back-btn">Back ←</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="department-card">
+        <div class="card-img">
+          <img src="../images/desing and ux.png" alt="Design & UI/UX" />
+        </div>
+        <div class="card-body">
+          <div class="front-content">
+            <h3>Design & UI/UX</h3>
+            <p class="desc">Visual identity and digital designs</p>
+            <button class="card-btn open-btn">DESCRIPTION</button>
+          </div>
+          <div class="back-content" style="display: none;">
+            <h3>About Design & UI/UX</h3>
+            <p class="desc">Developing the club’s visual identity and crafting appealing digital designs.</p>
+            <button class="card-btn back-btn">Back ←</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <h2 class="section-title">Upcoming Events</h2>
+  <div class="events-container">
+    <div class="event-card">
+      <img src="../images/skilland tell workshop.png" alt="Skill & Tell Event" class="event-image" />
+      <div class="event-content">
+        <div class="event-header">
+          <span class="event-number">01</span>
+          <span class="event-date">2025-12-15</span>
+        </div>
+        <h4 class="event-title">Skill & Tell Workshop</h4>
+        <p class="event-description">
+          A workshop to boost personal and professional skills (technical & soft) through interactive sessions.
+        </p>
+        <div class="event-tags">
+          <span class="tag">workshop</span>
+          <span class="tag">skills</span>
+          <span class="tag">communication</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comments Section -->
+  <section class="fade-in comment-box" id="comments">
+    <h2>Leave a comment</h2>
+    <form>
+      <label>Name:</label><br />
+      <input type="text" name="name" required /><br /><br />
+      <label>Comment:</label><br />
+      <textarea name="comment" rows="5" required></textarea><br /><br />
+      <button type="submit">Post Comment</button>
+    </form>
+    <div class="comments-list"></div>
+  </section>
+
+  <script src="../all js/skill and tell.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETC Club</title>
+  <link rel="stylesheet" href="../style/etc.css">
+</head>
+<body>
+  <div id="etc-trail-container"></div>
+
+  <!-- About Section -->
+  <section class="etc-about">
+    <div class="about-container">
+      <img src="../images/etc.jpg" alt="ETC Club logo" class="circle-img" />
+      <div class="about-text">
+        <h2 class="etc-title">About ETC Club</h2>
+       <ul class="ebec-list">
+  <li><strong>ETC Club</strong> is an engineering and technology club at <strong>ENSIA</strong>, bringing together passionate students from diverse technical backgrounds.</li>
+  <li>It focuses on <em>electronics, robotics, programming, AI, IoT, and innovative tech solutions</em> to prepare members for real-world challenges.</li>
+  <li>The club organizes <strong>hands-on workshops, coding competitions, robotics contests, hackathons, and collaborative projects</strong> to develop practical skills and teamwork.</li>
+  <li>Members have opportunities to <strong>engage with industry experts, attend tech conferences, and work on research-oriented projects</strong>, bridging the gap between academia and industry.</li>
+  <li>Its mission is to <strong>develop technical talent, foster innovation, encourage creativity, and promote collaboration</strong> among students.</li>
+  <li>The club also emphasizes <strong>community outreach, mentorship, and interdisciplinary learning</strong> to inspire future engineers and innovators.</li>
+  <li><strong>ETC — Explore. Transform. Create.</strong></li>
+</ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Departments Section -->
+  <section id="etc-departments">
+    <h2>Our Departments</h2>
+    <div class="etc-departments-container">
+
+      <!-- Electronics -->
+      <div class="etc-department-card">
+        <div class="etc-card-img">
+          <img src="../images/electronics.png" alt="Electronics Department">
+        </div>
+        <div class="etc-card-body">
+          <div class="front-content">
+            <h3>Electronics</h3>
+            <p class="etc-desc">Electronics Department</p>
+            <button class="etc-card-btn open-btn">DESCRIPTION</button>
+          </div>
+          <div class="back-content" style="display:none;">
+            <h3>About Electronics</h3>
+            <p class="etc-desc">
+              Focused on circuit design, hardware prototyping, IoT systems, and practical electronics projects.
+            </p>
+            <button class="etc-card-btn back-btn">Back ←</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Robotics -->
+      <div class="etc-department-card">
+        <div class="etc-card-img">
+          <img src="../images/robotics2.png" alt="Robotics Department">
+        </div>
+        <div class="etc-card-body">
+          <div class="front-content">
+            <h3>Robotics</h3>
+            <p class="etc-desc">Robotics Department</p>
+            <button class="etc-card-btn open-btn">DESCRIPTION</button>
+          </div>
+          <div class="back-content" style="display:none;">
+            <h3>About Robotics</h3>
+            <p class="etc-desc">
+              Designs and builds autonomous robots, competitive systems, and smart automation projects.
+            </p>
+            <button class="etc-card-btn back-btn">Back ←</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Programming -->
+      <div class="etc-department-card">
+        <div class="etc-card-img">
+          <img src="../images/programming.png" alt="Programming Department">
+        </div>
+        <div class="etc-card-body">
+          <div class="front-content">
+            <h3>Programming</h3>
+            <p class="etc-desc">Software & Algorithms</p>
+            <button class="etc-card-btn open-btn">DESCRIPTION</button>
+          </div>
+          <div class="back-content" style="display:none;">
+            <h3>About Programming</h3>
+            <p class="etc-desc">
+              Develops software solutions, algorithms, mobile apps, and web platforms for club projects.
+            </p>
+            <button class="etc-card-btn back-btn">Back ←</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Projects -->
+      <div class="etc-department-card">
+        <div class="etc-card-img">
+          <img src="../images/techprojects.png" alt="Tech Projects Department">
+        </div>
+        <div class="etc-card-body">
+          <div class="front-content">
+            <h3>Tech Projects</h3>
+            <p class="etc-desc">Innovation & Prototyping</p>
+            <button class="etc-card-btn open-btn">DESCRIPTION</button>
+          </div>
+          <div class="back-content" style="display:none;">
+            <h3>About Tech Projects</h3>
+            <p class="etc-desc">
+              Manages interdisciplinary projects, encourages prototyping solutions, and promotes creative innovation.
+            </p>
+            <button class="etc-card-btn back-btn">Back ←</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <h2 class="etc-section-title">Upcoming Events</h2>
+  <div class="etc-events-container">
+    <div class="etc-event-card">
+      <img src="../images/tech fair.png" alt="Tech Fair" class="etc-event-image">
+      <div class="etc-event-content">
+        <div class="etc-event-header">
+          <span class="event-number">01</span>
+          <span class="event-date">2025-10-15</span>
+        </div>
+        <h4 class="etc-event-title">Tech Fair</h4>
+        <p class="etc-event-description">
+          Annual exhibition showcasing electronics, robotics, and programming projects developed by ETC members.
+        </p>
+        <div class="etc-event-tags">
+          <span class="etc-tag">Robotics</span>
+          <span class="etc-tag">Electronics</span>
+          <span class="etc-tag">Programming</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comments Section -->
+  <section class="etc-comment-box" id="etc-comments">
+    <h2>Leave a comment</h2>
+    <form>
+      <label>Name:</label><br>
+      <input type="text" name="name" required><br><br>
+      <label>Comment:</label><br>
+      <textarea name="comment" rows="5" required></textarea><br><br>
+      <button type="submit">Post Comment</button>
+    </form>
+  </section>
+
+  <script src="../all js/etc.js"></script>
+</body>
+</html>
