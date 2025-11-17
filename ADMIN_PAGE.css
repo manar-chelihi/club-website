@@ -3,7 +3,7 @@
        width: 100%;
        margin: 0%;
        margin-bottom: 3%;
-      font-size: 25px;
+      font-size: 20px;
    }
     div{
           width: 60%;
@@ -33,7 +33,7 @@
         }
         form > h2
         {
-          font-size: 34px;
+          font-size:  30px;
         }
        form:hover{
         transform: translateY(-7px) ;
@@ -121,6 +121,11 @@
     }
     
       @media   (max-width: 500px)   {
+       
+       header{
+        width: 400px;
+
+       }
         *{
           font-size: 10px;
         }
@@ -148,7 +153,17 @@
        }
        #members{
         font-size: 12px;
+        width: 200px;
+        position: relative;
+        left: -10px;
        }
+       
+       #memebrs  form{
+        width: 200px;
+       }
+      #shef{
+        width: 200px;
+      }
        }
 
 
