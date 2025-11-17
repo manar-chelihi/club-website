@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin page</title>
+  <link rel="stylesheet" type="text/css" href="ADMIN_PAGE.css">
+ 
+</head>
+<body >
+
+<header id="ttop" style="background-color: #011f4b;">
+  <br>
+ <div style="text-align: center;"> <p style="color: aliceblue;">
+                  Club Management System - Admin Panel
+
+Welcome to your administrative dashboard. This powerful interface is designed to give you complete control over your club's digital presence and membership. Here’s what you can do:
+
+1. Member Overview & Management
+Access a comprehensive list of all club members.View their profiles, contact information, membership status, and activity history in one centralized location.
+
+2. Content Publishing & Post Management
+Create and publish announcements,news updates, and event information directly to the club's platform. You can draft, schedule, edit, and delete posts to keep members informed and engaged.
+
+3. Department Leadership Management
+Easily assign and update department chiefs within your organization.This feature allows you to modify leadership roles and responsibilities across different club departments as needed.
+
+This admin panel provides the essential tools for effective club administration, enabling you to maintain an active community and streamlined organizational structure .
+                </p></div>
+
+ <h1 style="color: #e5eaf1;text-shadow:-3px 1px 1px hsl(287, 79%, 50%);text-align: center;">
+  Welcome to the Admin page</h1>
+</header>
+
+  <div class="all">
+    <!--nav bar-->  
+     <section class="content" >
+            <div class="sidebar">
+                <div class="nav-item active">
+                    <span onclick="scrollToElement('ttop')"><p>📊 Dashboard</p></span>
+                </div>
+                <div class="nav-item">
+                    <span onclick="scrollToElement('members')"> <p>👥 Members</p></span>
+                </div>
+                <div class="nav-item">
+                    <span onclick="scrollToElement('pos')" > <p>📝 Posts</p></span>
+                </div>
+                <div class="nav-item">
+                    <span onclick="scrollToElement('shef')"><p>🏢 Departments</p></span>
+                </div>
+             
+               
+
+            </div>
+        
+     </section> 
+     
+     
+    
+   <div class="right">
+<!--Psot-->
+<section> 
+  <div id="pos" >
+ 
+    <form >
+        <h2 style="color: #1ce9e9; text-shadow: -3px 1px 1px hwb(290 6% 0%);"  >Adding post</h2>
+      
+        <label for="fname">The event :</label>
+        <input type="text" id="fname" name="fname" required>
+                  
+        <label for="lname">Description :</label>
+        <textarea id="lname" name="lname" placeholder="Description"  required ></textarea>
+        <label>Upload a Picture </label>
+      <input type="file" >
+        <input type="submit" value="Submit" style="border-radius: 20px;background-color: bisque;box-shadow: inset -2px 2px 6px 4px rgb(130, 111, 7);" >
+      </form>
+    </div>  
+    <br>
+  
+    <!--members-->
+    <div id="members">
+       <form style="background-color: blanchedalmond;">
+        <img src="/imgs/ebec.png" style="border-radius: 70% ;height: 100px;width: 100px;">
+        <h2 style="color: hsl(0, 0%, 0%);text-shadow: -3px 1px 0px  hsl(0, 11%, 98%);">
+          Club's members</h2>
+    
+          <div class="sEmail">
+              <span class="ss" >
+        <ul style="color: aliceblue;" class="c-g">
+        
+        
+       </ul>
+              </span>
+              
+          </div>
+  
+     
+        
+    </form> 
+    </div>
+    <!--shef-->
+     <div id="shef">
+         <form>
+        <h2 style="color: #1ce9e9;text-shadow:-2px 1px 1px hwb(301 4% 4%);">
+          Changing the shef of departement</h2>
+
+        <label for="shefcompleted">Shef mission completed</label>
+        <input type="text" id="shefcompleted" name="shef-X" placeholder="your name..."required>
+        <label for="Phone">Phone number</label>
+        <input type="tel" id="Phone" required>
+        <label for="email">email</label>
+        <input type="email" id="email" required>
+        <hr>
+
+        <label for="shefNew">New shef</label>
+        <input type="text" id="shefNew" name="shef-N" placeholder="your name..." required>
+        <label for="Phone">Phone number</label>
+        <input type="tel" id="Phone" required>
+        <label for="email">email</label>
+        <input type="email" id="email" required>
+        
+        <input type="button" value="Registe" style="border-radius: 20px;background-color: bisque;box-shadow: inset -2px 2px 6px 4px rgb(130, 111, 7);">
+      </form>
+     </div>
+  
+</div>
+
+</div>
+ 
+
+      <script src="ADMIN_PAGE.js" defer></script>
+</body>
+</html>
