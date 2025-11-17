@@ -12,49 +12,45 @@ body {
 }
 
 /* ===== About Section ===== */
- .circle-img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #133563;
-        display: block;
-        float: left;
-        margin: 50px 50px;
-      }
-.ebec-title {
+.circle-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #133563;
+  display: block;
+  float: left;
+  margin: 50px 50px;
+}
+
+.etc-title {
   font-size: 28px;
   font-weight: bold;
 }
 
-.ebec-list {
+.etc-list {
   font-size: 20px;
-  line-height: 1.6;
+  line-height: 2;
 }
+
 
 /* ===== Departments Section ===== */
-#departments {
-  background-color: rgb(170, 209, 221); /* white background */
+#etc-departments {
+  background-color: rgb(176, 204, 212); 
   padding: 60px 20px;
-  color: #000; /* text color */
+  color: #000;
 }
 
-.departments-container {
+
+.etc-departments-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 30px;
   justify-items: center;
 }
-#departments h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2em;
-  color: #000; /* text color */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow */
-}
 
 /* Department Card */
-.department-card {
+.etc-department-card {
   width: 100%;
   max-width: 300px;
   height: 400px;
@@ -71,24 +67,32 @@ body {
   background-position: center;
 }
 
-.department-card:hover {
+.etc-department-card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(54, 133, 235, 0.6), 0 0 40px rgba(54, 133, 235, 0.3);
 }
 
-.card-img {
+#etc-departments h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2em;
+  color: #000; /* text color */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow */
+}
+
+.etc-card-img {
   height: 180px;
   width: 100%;
 }
 
-.card-img img {
+.etc-card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
 }
 
-.card-body {
+.etc-card-body {
   padding: 15px;
   flex: 1;
   display: flex;
@@ -96,7 +100,7 @@ body {
   justify-content: space-between;
 }
 
-.card-btn {
+.etc-card-btn {
   width: 100%;
   background: linear-gradient(to right, #5c97db, #6ec8e4);
   border: none;
@@ -108,14 +112,23 @@ body {
   margin-top: 10px;
 }
 
-.desc {
+.etc-desc {
   line-height: 1.4;
   font-size: 14px;
   color: #a8b4d0;
 }
 
+/* Front/Back toggle */
+.front-content, .back-content {
+  flex: 1;
+}
+
+.back-content {
+  display: none;
+}
+
 /* ===== Events Section ===== */
-.section-title {
+.etc-section-title {
   text-align: center;
   font-size: 2em;
   color: #52b385;
@@ -123,7 +136,7 @@ body {
   margin-bottom: 30px;
 }
 
-.events-container {
+.etc-events-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -131,7 +144,7 @@ body {
   padding: 0 40px 60px;
 }
 
-.event-card {
+.etc-event-card {
   background: linear-gradient(180deg, #65a5ca 0%, #4244c2d5 100%);
   border-radius: 20px;
   overflow: hidden;
@@ -140,22 +153,22 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.event-card:hover {
+.etc-event-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
-.event-image {
+.etc-event-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-.event-content {
+.etc-event-content {
   padding: 20px;
 }
 
-.event-header {
+.etc-event-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -164,23 +177,23 @@ body {
   margin-bottom: 10px;
 }
 
-.event-title {
+.etc-event-title {
   font-size: 1.6em;
   color: white;
 }
 
-.event-description {
+.etc-event-description {
   font-size: 0.95em;
   line-height: 1.6;
   color: #ddd;
   margin-top: 10px;
 }
 
-.event-tags {
+.etc-event-tags {
   margin-top: 15px;
 }
 
-.tag {
+.etc-tag {
   background-color: #56258f;
   color: white;
   padding: 6px 12px;
@@ -191,12 +204,12 @@ body {
   transition: 0.2s ease;
 }
 
-.tag:hover {
+.etc-tag:hover {
   background-color: #101153;
 }
 
 /* ===== Comments Section ===== */
-#comments {
+#etc-comments {
   background-color: #c9cace;
   color: #222;
   font-size: 20px;
@@ -206,8 +219,8 @@ body {
   width: 60%;
 }
 
-#comments input,
-#comments textarea {
+#etc-comments input,
+#etc-comments textarea {
   width: 100%;
   padding: 10px;
   margin: 8px 0;
@@ -215,7 +228,7 @@ body {
   border: 1px solid #31334b;
 }
 
-#comments button {
+#etc-comments button {
   background-color: #2b3746;
   color: white;
   padding: 15px 20px;
@@ -225,7 +238,7 @@ body {
   font-size: 18px;
 }
 
-#comments button:hover {
+#etc-comments button:hover {
   background-color: #212b3a;
 }
 
@@ -233,12 +246,12 @@ body {
 
 /* Tablet (≤900px) */
 @media (max-width: 900px) {
-  .departments-container {
+  .etc-departments-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
 
-  .department-card {
+  .etc-department-card {
     height: 380px;
   }
 
@@ -250,28 +263,28 @@ body {
     height: 200px;
   }
 
-  .ebec-title, .ebec-list {
+  .etc-title, .etc-list {
     text-align: center;
     padding: 0 20px;
   }
 
-  .events-container {
+  .etc-events-container {
     padding: 0 20px 40px;
   }
 
-  #comments {
+  #etc-comments {
     width: 80%;
   }
 }
 
 /* Mobile (≤600px) */
 @media (max-width: 600px) {
-  .departments-container {
+  .etc-departments-container {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .department-card {
+  .etc-department-card {
     width: 90%;
     height: 350px;
   }
@@ -286,42 +299,37 @@ body {
     margin: 15px auto;
   }
 
-  .ebec-title {
+  .etc-title {
     font-size: 22px;
   }
 
-  .ebec-list {
+  .etc-list {
     font-size: 16px;
     line-height: 1.4;
   }
 
-  .events-container {
+  .etc-events-container {
     flex-direction: column;
     align-items: center;
   }
 
-  .event-card {
+  .etc-event-card {
     width: 90%;
   }
 
-  #comments {
+  #etc-comments {
     width: 90%;
     font-size: 18px;
     padding: 20px;
   }
 
-  #comments button {
+  #etc-comments button {
     width: 100%;
   }
 }
 
 /* ===== Comments Section Styling ===== */
-.comments-list {
-  margin-top: 20px;
-}
-
-/* Each comment card */
-.user-comment {
+.etc-user-comment {
   background-color: #f0f0f0;
   color: #000;
   padding: 15px;
@@ -330,12 +338,12 @@ body {
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.user-comment p {
+.etc-user-comment p {
   margin: 5px 0 0 0;
 }
 
 /* ===== Trail Effect ===== */
-#trail-container {
+#etc-trail-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -344,7 +352,7 @@ body {
   z-index: 9999;
 }
 
-.trail {
+.etc-trail {
   position: absolute;
   width: 10px;
   height: 10px;
@@ -365,21 +373,20 @@ body {
     transform: scale(0.2) translate(-50%, -50%);
   }
 }
+
 /* ===== Comments Section Animation ===== */
-.comment-box {
+.etc-comment-box {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 1s ease, transform 1s ease;
 }
 
-/* Slide-up entrance */
-.comment-box.active {
+.etc-comment-box.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Optional floating effect */
-.comment-box.float {
+.etc-comment-box.float {
   animation: float 3s ease-in-out infinite;
 }
 
@@ -387,35 +394,4 @@ body {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
-}
-/* ===== Mouse Trail ===== */
-#trail-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none; /* so it doesn't block clicks */
-  overflow: visible;
-  z-index: 9999;
-}
-/* for the mouse moove animation */
-.trail {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ff0077, #00ffff);
-  opacity: 0.8;
-  transform: translate(-50%, -50%);
-  animation: fadeOut 1.0s linear forwards;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: scale(1) translate(-50%, -50%);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.2) translate(-50%, -50%);
-  }
 }

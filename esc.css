@@ -1,6 +1,6 @@
 /* ===== Body ===== */
 body {
-  background-image: url('https://www.shutterstock.com/image-vector/ai-humanoid-face-concept-technology-600nw-2645975149.jpg');
+  background-image: url('https://www.shutterstock.com/image-vector/ai-humanoid-face-concept-technology-600nw-2645975149.jpg'); /* keep same background or replace */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -12,38 +12,32 @@ body {
 }
 
 /* ===== About Section ===== */
- .circle-img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #133563;
-        display: block;
-        float: left;
-        margin: 50px 50px;
-      }
-.ebec-title {
+.circle-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #133563;
+  display: block;
+  float: left;
+  margin: 50px 50px;
+}
+
+.esc-title {
   font-size: 28px;
   font-weight: bold;
 }
 
-.ebec-list {
+.esc-list {
   font-size: 20px;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 /* ===== Departments Section ===== */
 #departments {
-  background-color: rgb(170, 209, 221); /* white background */
+  background-color: rgb(169, 205, 216); /* white background */
   padding: 60px 20px;
   color: #000; /* text color */
-}
-
-.departments-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-  gap: 30px;
-  justify-items: center;
 }
 #departments h2 {
   text-align: center;
@@ -51,6 +45,13 @@ body {
   font-size: 2em;
   color: #000; /* text color */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow */
+}
+
+.departments-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 30px;
+  justify-items: center;
 }
 
 /* Department Card */
@@ -250,7 +251,7 @@ body {
     height: 200px;
   }
 
-  .ebec-title, .ebec-list {
+  .esc-title, .esc-list {
     text-align: center;
     padding: 0 20px;
   }
@@ -286,11 +287,11 @@ body {
     margin: 15px auto;
   }
 
-  .ebec-title {
+  .esc-title {
     font-size: 22px;
   }
 
-  .ebec-list {
+  .esc-list {
     font-size: 16px;
     line-height: 1.4;
   }
@@ -320,7 +321,6 @@ body {
   margin-top: 20px;
 }
 
-/* Each comment card */
 .user-comment {
   background-color: #f0f0f0;
   color: #000;
@@ -365,6 +365,7 @@ body {
     transform: scale(0.2) translate(-50%, -50%);
   }
 }
+
 /* ===== Comments Section Animation ===== */
 .comment-box {
   opacity: 0;
@@ -372,13 +373,11 @@ body {
   transition: opacity 1s ease, transform 1s ease;
 }
 
-/* Slide-up entrance */
 .comment-box.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Optional floating effect */
 .comment-box.float {
   animation: float 3s ease-in-out infinite;
 }
@@ -387,35 +386,4 @@ body {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
-}
-/* ===== Mouse Trail ===== */
-#trail-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none; /* so it doesn't block clicks */
-  overflow: visible;
-  z-index: 9999;
-}
-/* for the mouse moove animation */
-.trail {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ff0077, #00ffff);
-  opacity: 0.8;
-  transform: translate(-50%, -50%);
-  animation: fadeOut 1.0s linear forwards;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: scale(1) translate(-50%, -50%);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.2) translate(-50%, -50%);
-  }
 }

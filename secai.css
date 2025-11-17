@@ -12,16 +12,17 @@ body {
 }
 
 /* ===== About Section ===== */
- .circle-img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #133563;
-        display: block;
-        float: left;
-        margin: 50px 50px;
-      }
+.circle-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #133563;
+  display: block;
+  float: left;
+  margin: 50px 50px;
+}
+
 .ebec-title {
   font-size: 28px;
   font-weight: bold;
@@ -34,23 +35,16 @@ body {
 
 /* ===== Departments Section ===== */
 #departments {
-  background-color: rgb(170, 209, 221); /* white background */
+  background-color: rgb(172, 206, 216);
   padding: 60px 20px;
-  color: #000; /* text color */
+  color: #000;
 }
 
 .departments-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   justify-items: center;
-}
-#departments h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2em;
-  color: #000; /* text color */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow */
 }
 
 /* Department Card */
@@ -69,6 +63,13 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-size: cover;
   background-position: center;
+}
+#departments h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2em;
+  color: #000; /* text color */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow */
 }
 
 .department-card:hover {
@@ -230,8 +231,6 @@ body {
 }
 
 /* ===== Responsive ===== */
-
-/* Tablet (≤900px) */
 @media (max-width: 900px) {
   .departments-container {
     grid-template-columns: repeat(2, 1fr);
@@ -264,7 +263,6 @@ body {
   }
 }
 
-/* Mobile (≤600px) */
 @media (max-width: 600px) {
   .departments-container {
     grid-template-columns: 1fr;
@@ -315,12 +313,11 @@ body {
   }
 }
 
-/* ===== Comments Section Styling ===== */
+/* ===== Comments Animation ===== */
 .comments-list {
   margin-top: 20px;
 }
 
-/* Each comment card */
 .user-comment {
   background-color: #f0f0f0;
   color: #000;
@@ -334,7 +331,28 @@ body {
   margin: 5px 0 0 0;
 }
 
-/* ===== Trail Effect ===== */
+.comment-box {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.comment-box.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.comment-box.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* ===== Mouse Trail ===== */
 #trail-container {
   position: fixed;
   top: 0;
@@ -352,61 +370,7 @@ body {
   background: radial-gradient(circle, #ff0077, #00ffff);
   opacity: 0.8;
   transform: translate(-50%, -50%);
-  animation: fadeOut 0.8s linear forwards;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: scale(1) translate(-50%, -50%);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.2) translate(-50%, -50%);
-  }
-}
-/* ===== Comments Section Animation ===== */
-.comment-box {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-/* Slide-up entrance */
-.comment-box.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Optional floating effect */
-.comment-box.float {
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-/* ===== Mouse Trail ===== */
-#trail-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none; /* so it doesn't block clicks */
-  overflow: visible;
-  z-index: 9999;
-}
-/* for the mouse moove animation */
-.trail {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ff0077, #00ffff);
-  opacity: 0.8;
-  transform: translate(-50%, -50%);
-  animation: fadeOut 1.0s linear forwards;
+  animation: fadeOut 1s linear forwards;
 }
 
 @keyframes fadeOut {
