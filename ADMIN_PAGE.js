@@ -115,7 +115,7 @@ function setupAdminForm() {
         console.log("Description:", description);
         console.log("Image file:", imageFile);
         
-        // Handle image conversion and save
+        
         if (imageFile) {
             const reader = new FileReader();
             reader.onload = function(e) {
