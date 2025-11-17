@@ -10,14 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const openBtn = frontContent.querySelector(".open-btn");
     const backBtn = backContent.querySelector(".back-btn");
 
-    openBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
+    openBtn.addEventListener("click", () => {
       frontContent.style.display = "none";
       backContent.style.display = "block";
     });
 
-    backBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
+    backBtn.addEventListener("click", () => {
       backContent.style.display = "none";
       frontContent.style.display = "block";
     });
@@ -26,39 +24,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ============================================================
-        2) COMMENT SYSTEM (your original code)
+        2) COMMENT SYSTEM
   ============================================================ */
-  const comments = document.getElementById('comments');
+  const comments = document.getElementById("comments");
+
   if (comments) {
     const commentForm = comments.querySelector("form");
-    const storageKey = "ebecComments";
+    const storageKey = "gdjComments";
+
     let savedComments = JSON.parse(localStorage.getItem(storageKey) || "[]");
 
     function createCommentElement(comment, index) {
-      const newComment = document.createElement("div");
-      newComment.classList.add("user-comment");
-      newComment.innerHTML = `
-        <strong>${comment.name}:</strong> 
+      const element = document.createElement("div");
+      element.classList.add("user-comment");
+
+      element.innerHTML = `
+        <strong>${comment.name}:</strong>
         <p>${comment.text}</p>
         <button class="delete-comment" data-index="${index}">Delete</button>
       `;
 
-      newComment.querySelector(".delete-comment").addEventListener("click", (e) => {
-        const idx = e.target.dataset.index;
-        savedComments.splice(idx, 1);
+      element.querySelector(".delete-comment").addEventListener("click", (e) => {
+        const i = e.target.dataset.index;
+        savedComments.splice(i, 1);
         localStorage.setItem(storageKey, JSON.stringify(savedComments));
         renderComments();
       });
 
-      return newComment;
+      return element;
     }
 
     function renderComments() {
       comments.querySelectorAll(".user-comment").forEach(c => c.remove());
-      savedComments.forEach((c, i) => {
-        const commentElement = createCommentElement(c, i);
-        commentForm.after(commentElement);
-      });
+      savedComments.forEach((c, i) => commentForm.after(createCommentElement(c, i)));
     }
 
     renderComments();
@@ -77,47 +75,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     setTimeout(() => {
-      comments.classList.add('active', 'float');
+      comments.classList.add("active", "float");
     }, 200);
   }
 
 
 
   /* ============================================================
-        3) AUTO POSTS SYSTEM (Admin posts → appear on EBEC page)
+        3) AUTO POSTS SYSTEM (Admin → GDJ page)
   ============================================================ */
   const postForm = document.getElementById("postForm");
   const postsContainer = document.getElementById("posts");
-  const postsKey = "globalPosts";   // SAME KEY for all clubs
+  const postsKey = "globalPosts";  // global key for all clubs
 
   let savedPosts = JSON.parse(localStorage.getItem(postsKey) || "[]");
 
-
-  /* ----- SHOW POSTS ON EBEC PAGE ----- */
-  if (postsContainer) {
-    displayPosts();
-  }
+  if (postsContainer) displayPosts();
 
   function displayPosts() {
     postsContainer.innerHTML = "";
 
     savedPosts
-      .filter(p => p.club === "EBEC")
+      .filter(post => post.club === "GDJ")
       .forEach(post => {
-        const postDiv = document.createElement("div");
-        postDiv.classList.add("post");
-        postDiv.innerHTML = `
+        const div = document.createElement("div");
+        div.classList.add("post");
+
+        div.innerHTML = `
           <h3>${post.title}</h3>
           <p>${post.content}</p>
           ${post.image ? `<img src="${post.image}" style="max-width:300px;">` : ""}
           <small>${post.date}</small>
         `;
-        postsContainer.appendChild(postDiv);
+
+        postsContainer.appendChild(div);
       });
   }
 
-
-  /* ----- ADMIN PAGE POST CREATION ----- */
   if (postForm) {
     postForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -130,9 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (imageInput.files && imageInput.files[0]) {
         const reader = new FileReader();
-        reader.onload = (e) => {
-          savePost(title, content, e.target.result);
-        };
+        reader.onload = (e) => savePost(title, content, e.target.result);
         reader.readAsDataURL(imageInput.files[0]);
       } else {
         savePost(title, content, "");
@@ -144,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function savePost(title, content, image) {
     const newPost = {
-      club: "EBEC",
+      club: "GDJ",
       title,
       content,
       image,
@@ -163,17 +155,20 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ============================================================
         4) MOUSE TRAIL EFFECT
   ============================================================ */
-  const trailContainer = document.getElementById('trail-container');
-  const colors = ['#ff0077', '#495a92ff', '#ffcc00', '#72b6d1ff', '#ff6600', '#9933ff'];
+  const trailContainer = document.getElementById("trail-container");
+  const colors = ["#ff0077", "#495a92ff", "#ffcc00", "#72b6d1ff", "#ff6600", "#9933ff"];
 
   if (trailContainer) {
-    document.addEventListener('mousemove', (e) => {
-      const dot = document.createElement('div');
-      dot.classList.add('trail');
+    document.addEventListener("mousemove", (e) => {
+      const dot = document.createElement("div");
+      dot.classList.add("trail");
+
       dot.style.background = colors[Math.floor(Math.random() * colors.length)];
-      dot.style.left = e.clientX + 'px';
-      dot.style.top = e.clientY + 'px';
+      dot.style.left = e.clientX + "px";
+      dot.style.top = e.clientY + "px";
+
       trailContainer.appendChild(dot);
+
       setTimeout(() => dot.remove(), 800);
     });
   }
