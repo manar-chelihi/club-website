@@ -70,155 +70,32 @@ function initializeGSAPAnimations() {
     });
 }
 
-// ADMIN MEMBERS SCRIPT
+
+// AUTO POST SYSTEM - Creates divs automatically
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("=== DEBUG: Script started ===");
-    
-    // Define club members for different admin clubs
-    const clubMembers = {
-        "chelihimanar38@gmail.com": [
-            "Mohammed, mohammed@ensia.edu.dz", "Ahmed, ahmed@ensia.edu.dz", "Ali, ali@ensia.edu.dz", 
-            "Khalid, khalid@ensia.edu.dz", "Fatima, fatima@ensia.edu.dz", "Maryam, maryam@ensia.edu.dz", 
-            "Youssef, youssef@ensia.edu.dz", "Omar, omar@ensia.edu.dz", "Sarah, sarah@ensia.edu.dz", 
-            "Layla, layla@ensia.edu.dz", "Hassan, hassan@ensia.edu.dz", "Zainab, zainab@ensia.edu.dz", 
-            "Aisha, aisha@ensia.edu.dz", "Ibrahim, ibrahim@ensia.edu.dz", "Nour, nour@ensia.edu.dz",
-            "Reem, reem@ensia.edu.dz", "Osama, osama@ensia.edu.dz", "Huda, huda@ensia.edu.dz", 
-            "Mustafa, mustafa@ensia.edu.dz", "Amina, amina@ensia.edu.dz"
-        ],
-        "admin1@gmail.com": [
-            "John, john@ensia.edu.dz", "Michael, michael@ensia.edu.dz", "David, david@ensia.edu.dz", 
-            "Robert, robert@ensia.edu.dz", "Jennifer, jennifer@ensia.edu.dz", "Lisa, lisa@ensia.edu.dz", 
-            "Susan, susan@ensia.edu.dz", "Jessica, jessica@ensia.edu.dz", "Thomas, thomas@ensia.edu.dz", 
-            "Daniel, daniel@ensia.edu.dz"
-        ],
-        "admin2@gmail.com": [
-            "Emily, emily@ensia.edu.dz", "Christopher, christopher@ensia.edu.dz", "Sarah, sarah@ensia.edu.dz", 
-            "Kevin, kevin@ensia.edu.dz", "Amanda, amanda@ensia.edu.dz", "James, james@ensia.edu.dz", 
-            "Nicole, nicole@ensia.edu.dz", "Andrew, andrew@ensia.edu.dz", "Elizabeth, elizabeth@ensia.edu.dz", 
-            "Brian, brian@ensia.edu.dz"
-        ]
-    };
-
-    const clubLogos = {
-        "chelihimanar38@gmail.com": "imgs/ebec.png",
-        "admin1@gmail.com": "imgs/etc.jpg", 
-        "admin2@gmail.com": "imgs/skill%20and%20tell.jpg"
-    };
-
-    // Get current admin email from localStorage
-    const adminEmail = localStorage.getItem('adminEmail');
-    console.log("DEBUG: adminEmail =", adminEmail);
-    
-    if (!adminEmail) {
-        console.error("DEBUG: No admin email found in localStorage!");
-        alert("Please login first!");
-        window.location.href = "login.html"; // Change this to your login page
-        return;
-    }
-
-    // Update members list
-    const memberList = document.querySelector('#members .c-g');
-    console.log("DEBUG: memberList element =", memberList);
-    
-    if (memberList && clubMembers[adminEmail]) {
-        console.log("DEBUG: Updating members for:", adminEmail);
-        
-        // Clear existing list
-        memberList.innerHTML = '';
-        
-        // Add members from the admin's club
-        clubMembers[adminEmail].forEach(member => {
-            const li = document.createElement('li');
-            li.textContent = member;
-            memberList.appendChild(li);
-        });
-        
-        console.log("DEBUG: Members updated successfully");
-        
-        // Re-initialize GSAP animations
-        setTimeout(() => {
-            initializeGSAPAnimations();
-        }, 100);
-    } else {
-        console.error("DEBUG: Could not update members - memberList:", !!memberList, "clubMembers[adminEmail]:", !!clubMembers[adminEmail]);
-    }
-
-    // Update logo
-    const logoImg = document.querySelector('#members form img');
-    console.log("DEBUG: logoImg element =", logoImg);
-    
-    if (logoImg && clubLogos[adminEmail]) {
-        logoImg.src = clubLogos[adminEmail];
-        console.log("DEBUG: Logo updated to:", clubLogos[adminEmail]);
-    }
-
-    // Update heading
-    const heading = document.querySelector('#members form h2');
-    if (heading) {
-        if (adminEmail === "chelihimanar38@gmail.com") {
-            heading.textContent = "EBEC Club Members";
-        } else if (adminEmail === "admin1@gmail.com") {
-            heading.textContent = "ETC Club Members"; 
-        } else if (adminEmail === "admin2@gmail.com") {
-            heading.textContent = "Skill & Tell Club Members";
-        }
-    }
-});
-
- // AUTO POST SYSTEM - Creates divs automatically
-// INTEGRATED POST SYSTEM - Handles multiple clubs based on admin email
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("Integrated system loaded");
+    console.log("Script loaded - checking page type...");
     
     // Check if we're on admin page (has the form)
     const adminForm = document.querySelector('#pos form');
     if (adminForm) {
-        console.log("Admin page detected");
+        console.log("Admin page detected - setting up form...");
         setupAdminForm();
     }
     
-    // Check if we're on any club page
-    if (document.querySelector('.events-container') || document.querySelector('#members')) {
-        console.log("Club page detected");
+    // Check if we're on club page
+    if (document.querySelector('.events-container')) {
+        console.log("Club page detected - setting up posts...");
         setupClubPosts();
     }
 });
 
-// Club mapping based on admin emails
-const CLUB_MAPPING = {
-    "chelihimanar38@gmail.com": {
-        name: "EBEC Club",
-        page: "ebec-club.html",  // Change to your actual EBEC club page
-        logo: "imgs/ebec.png"
-    },
-    "admin1@gmail.com": {
-        name: "BEST Club", 
-        page: "best-club.html",  // Change to your actual BEST club page
-        logo: "imgs/best.jpg"
-    },
-    "admin2@gmail.com": {
-        name: "Skill & Tell Club",
-        page: "skill-club.html",  // Change to your actual Skill club page
-        logo: "imgs/skill%20and%20tell.jpg"
-    }
-};
-
 function setupAdminForm() {
     const form = document.querySelector('#pos form');
     
+    // Add submit event listener
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         console.log("Form submitted!");
-        
-        // Get admin email from localStorage (from login system)
-        const adminEmail = localStorage.getItem('adminEmail');
-        console.log("Admin email from localStorage:", adminEmail);
-        
-        if (!adminEmail) {
-            alert('Please login first!');
-            window.location.href = 'login.html'; // Redirect to login
-            return;
-        }
         
         // Get form data
         const titleInput = form.querySelector('input[type="text"]');
@@ -234,58 +111,34 @@ function setupAdminForm() {
             return;
         }
         
-        console.log("Creating post for admin:", adminEmail);
         console.log("Title:", title);
         console.log("Description:", description);
+        console.log("Image file:", imageFile);
         
-        // Handle image and save post
+        // Handle image conversion and save
         if (imageFile) {
             const reader = new FileReader();
             reader.onload = function(e) {
-                savePostAndRedirect(adminEmail, title, description, e.target.result);
+                savePost(title, description, e.target.result);
             };
             reader.readAsDataURL(imageFile);
         } else {
-            savePostAndRedirect(adminEmail, title, description, null);
+            savePost(title, description, null);
         }
     });
 }
 
-function savePostAndRedirect(adminEmail, title, description, imageData) {
-    // Determine which club this admin belongs to
-    const clubInfo = CLUB_MAPPING[adminEmail];
-    
-    if (!clubInfo) {
-        alert('Error: No club found for this admin email: ' + adminEmail);
-        return;
-    }
-    
-    console.log("Club info:", clubInfo);
-    
-    // Save post with club information
-    savePostToStorage(adminEmail, clubInfo.name, title, description, imageData);
-    
-    // Redirect to the specific club page using SWITCH statement
-    redirectToClubPage(adminEmail, clubInfo.page);
-}
-
-function savePostToStorage(adminEmail, clubName, title, description, imageData) {
+function savePost(title, description, imageData) {
     // Get existing posts or create empty array
     let posts = JSON.parse(localStorage.getItem('clubPosts')) || [];
     
-    // Create new post object with club info
+    // Create new post object
     const newPost = {
         id: Date.now(),
-        adminEmail: adminEmail,
-        clubName: clubName,
         title: title,
         description: description,
         image: imageData,
-        date: new Date().toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        }),
+        date: new Date().toLocaleDateString(),
         timestamp: new Date().toISOString()
     };
     
@@ -295,47 +148,24 @@ function savePostToStorage(adminEmail, clubName, title, description, imageData) 
     // Save back to localStorage
     localStorage.setItem('clubPosts', JSON.stringify(posts));
     
-    console.log("Post saved for club:", clubName);
-}
-
-function redirectToClubPage(adminEmail, clubPage) {
-    console.log("Redirecting to club page for:", adminEmail);
+    console.log("Post saved to localStorage:", newPost);
     
-    // SWITCH statement to handle different redirects
-    switch(adminEmail) {
-        case "chelihimanar38@gmail.com":
-            console.log("Redirecting to EBEC club page");
-            window.location.href = clubPage;
-            break;
-            
-        case "admin1@gmail.com":
-            console.log("Redirecting to BEST club page");
-            window.location.href = clubPage;
-            break;
-            
-        case "admin2@gmail.com":
-            console.log("Redirecting to Skill & Tell club page");
-            window.location.href = clubPage;
-            break;
-            
-        default:
-            console.log("Unknown admin, using default redirect");
-            window.location.href = clubPage;
-            break;
-    }
+    // Redirect to club page
+    alert('Post created! Redirecting to club page...');
+    window.location.href = 'esc.html'; 
 }
 
 function setupClubPosts() {
-    console.log("Setting up club posts system...");
+    console.log("Setting up club posts...");
     
     // Create the CSS for posts if it doesn't exist
     createPostStyles();
     
-    // Create the posts section if it doesn't exist
+    // Create the posts container if it doesn't exist
     createPostsContainer();
     
-    // Load and display posts for current club
-    loadClubPosts();
+    // Load and display posts
+    loadPosts();
 }
 
 function createPostStyles() {
@@ -418,115 +248,84 @@ function createPostStyles() {
                 font-size: 1.1em;
                 width: 100%;
             }
-            
-            .club-badge {
-                background: #ff6b6b;
-                color: white;
-                padding: 4px 8px;
-                border-radius: 12px;
-                font-size: 0.7em;
-                margin-left: 10px;
-            }
         </style>
     `;
     
     document.head.insertAdjacentHTML('beforeend', styles);
+    console.log("Post styles created");
 }
 
 function createPostsContainer() {
-    if (document.getElementById('autoPostsSection')) return;
+    // Check if container already exists
+    if (document.getElementById('autoPostsSection')) {
+        console.log("Posts container already exists");
+        return;
+    }
     
     console.log("Creating posts container...");
     
+    // Create the main section
     const postsSection = document.createElement('section');
     postsSection.className = 'auto-posts-section';
     postsSection.id = 'autoPostsSection';
     
+    // Create the title and container
     postsSection.innerHTML = `
         <h2 class="auto-posts-title">Club Announcements</h2>
-        <div class="auto-posts-container" id="autoPostsContainer">
-            <div class="no-posts-message">Loading announcements...</div>
+        <div class="auto-post-card">
+            <div class="auto-post-content">
+                <h3 class="auto-post-title">Loading posts...</h3>
+                <p class="auto-post-description">Please wait while we load the latest announcements.</p>
+            </div>
         </div>
     `;
     
-    // Insert after events section or before comments
+    // Find where to insert - after events section
     const eventsContainer = document.querySelector('.events-container');
     if (eventsContainer) {
+        console.log("Found events container, inserting after it");
         eventsContainer.parentNode.insertBefore(postsSection, eventsContainer.nextSibling);
     } else {
+        // If no events container, add before comments
         const commentsSection = document.getElementById('comments');
         if (commentsSection) {
+            console.log("No events container found, inserting before comments");
             commentsSection.parentNode.insertBefore(postsSection, commentsSection);
         } else {
+            // Last resort - add to body
+            console.log("Adding posts section to body");
             document.body.appendChild(postsSection);
         }
     }
+    
+    console.log("Posts container created successfully");
 }
 
-function loadClubPosts() {
-    console.log("Loading club posts...");
+function loadPosts() {
+    console.log("Loading posts from localStorage...");
     
-    const postsContainer = document.getElementById('autoPostsContainer');
-    if (!postsContainer) return;
-    
-    // Get current page to determine which club we're on
-    const currentPage = window.location.pathname.split('/').pop();
-    console.log("Current page:", currentPage);
-    
-    // Get all posts from localStorage
-    const allPosts = JSON.parse(localStorage.getItem('clubPosts')) || [];
-    console.log("Total posts in storage:", allPosts.length);
-    
-    // Determine which posts to show based on current page
-    let postsToShow = [];
-    
-    // SWITCH statement to filter posts based on current page
-    switch(currentPage) {
-        case "ebec-club.html": // Change to your actual EBEC club page filename
-        case "super_admin.html": // EBEC admin might use this page
-            console.log("Showing EBEC club posts");
-            postsToShow = allPosts.filter(post => 
-                post.adminEmail === "chelihimanar38@gmail.com" || 
-                post.clubName === "EBEC Club"
-            );
-            break;
-            
-        case "best-club.html": // Change to your actual BEST club page filename
-        case "admin.html": // Normal admins might use this page
-            console.log("Showing BEST club posts");
-            postsToShow = allPosts.filter(post => 
-                post.adminEmail === "admin1@gmail.com" || 
-                post.clubName === "BEST Club"
-            );
-            break;
-            
-        case "skill-club.html": // Change to your actual Skill club page filename
-            console.log("Showing Skill & Tell club posts");
-            postsToShow = allPosts.filter(post => 
-                post.adminEmail === "admin2@gmail.com" || 
-                post.clubName === "Skill & Tell Club"
-            );
-            break;
-            
-        default:
-            console.log("Unknown page, showing all posts");
-            postsToShow = allPosts;
-            break;
+    const postsSection = document.getElementById('autoPostsSection');
+    if (!postsSection) {
+        console.error("Posts section not found!");
+        return;
     }
     
-    console.log("Filtered posts to show:", postsToShow.length);
+    // Get posts from localStorage
+    const posts = JSON.parse(localStorage.getItem('clubPosts')) || [];
+    console.log("Found", posts.length, "posts in localStorage");
     
-    // Display the filtered posts
-    displayPosts(postsToShow);
-}
-
-function displayPosts(posts) {
-    const postsContainer = document.getElementById('autoPostsContainer');
-    if (!postsContainer) return;
+    // Clear the loading message
+    postsSection.innerHTML = '<h2 class="auto-posts-title">Club Announcements</h2>';
     
-    postsContainer.innerHTML = '';
+    // Create container for posts
+    const postsContainer = document.createElement('div');
+    postsContainer.className = 'auto-posts-container';
+    postsContainer.id = 'autoPostsContainer';
+    
+    postsSection.appendChild(postsContainer);
     
     if (posts.length === 0) {
+        console.log("No posts found, showing empty message");
         postsContainer.innerHTML = `
             <div class="no-posts-message">
                 <h3>No announcements yet</h3>
@@ -536,13 +335,16 @@ function displayPosts(posts) {
         return;
     }
     
+    console.log("Creating post cards...");
+    
     // Create a card for each post
     posts.forEach((post, index) => {
-        console.log(`Creating card ${index + 1} for: ${post.title}`);
+        console.log(`Creating card for post ${index + 1}:`, post.title);
         
         const postCard = document.createElement('div');
         postCard.className = 'auto-post-card';
         
+        // Create the HTML for this post
         let imageHTML = '';
         if (post.image) {
             imageHTML = `<img src="${post.image}" alt="${post.title}" class="auto-post-image">`;
@@ -557,10 +359,7 @@ function displayPosts(posts) {
         postCard.innerHTML = `
             ${imageHTML}
             <div class="auto-post-content">
-                <h3 class="auto-post-title">
-                    ${post.title}
-                    <span class="club-badge">${post.clubName}</span>
-                </h3>
+                <h3 class="auto-post-title">${post.title}</h3>
                 <p class="auto-post-description">${post.description}</p>
                 <div class="auto-post-date">Posted: ${post.date}</div>
             </div>
@@ -572,19 +371,19 @@ function displayPosts(posts) {
     console.log("All post cards created successfully");
 }
 
-// Utility functions
-function debugSystem() {
-    console.log("=== SYSTEM DEBUG ===");
-    console.log("Admin email in localStorage:", localStorage.getItem('adminEmail'));
-    console.log("All posts in localStorage:", JSON.parse(localStorage.getItem('clubPosts')) || []);
-    console.log("Current page:", window.location.href);
+// Debug function to see what's in localStorage
+function debugPosts() {
+    const posts = JSON.parse(localStorage.getItem('clubPosts')) || [];
+    console.log("Current posts in localStorage:", posts);
+    return posts;
 }
 
+// Function to clear all posts (for testing)
 function clearAllPosts() {
     if (confirm('Delete all posts?')) {
         localStorage.removeItem('clubPosts');
         if (document.getElementById('autoPostsContainer')) {
-            loadClubPosts();
+            loadPosts();
         }
     }
 }
